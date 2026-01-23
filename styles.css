@@ -153,6 +153,39 @@ select:focus,input:focus{border-color:#ffffff33; box-shadow:0 0 0 3px #ffffff12}
     repeating-linear-gradient(90deg, #0000 0 16px, #00000022 16px 18px),
     linear-gradient(135deg, var(--wood1) 0%, var(--wood2) 70%);
 }
+
+/* --- Noticeboard image overlay (assets/ui/noticeboard.png) --- */
+.board{
+  position: relative; /* needed for ::before layer */
+}
+
+.board::before{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  /* Darken slightly so parchment text stays readable */
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.42)),
+    url("assets/ui/noticeboard.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* Subtle punch without looking like a filter bomb */
+  filter: contrast(1.06) saturate(1.05);
+
+  z-index: 0;
+  pointer-events: none; /* clicks go through */
+}
+
+/* Keep quest content above the image */
+.boardInner{
+  position: relative;
+  z-index: 1;
+}
+
 .boardInner{
   position:relative;
   padding:18px;
