@@ -11,6 +11,75 @@ const state = {
   qtypes: new Set(),
 };
 
+const ACCEPTED_KEY = "si_noticeboard_accepted_v1";
+let accepted = loadAccepted();
+let currentShown = []; // tracks what’s currently pinned
+
+function loadAccepted(){
+  try { return JSON.parse(localStorage.getItem(ACCEPTED_KEY) || "[]"); }
+  catch { return []; }
+}
+function saveAccepted(){
+  localStorage.setItem(ACCEPTED_KEY, JSON.stringify(accepted));
+}
+
+function acceptQuest(q){
+  if(!q || typeof q.id === "undefined") return;
+  if(!accepted.some(x => x.id === q.id)){
+    accepted.push(q);
+    saveAccepted();
+    renderAccepted();
+  }
+}
+
+function removeAccepted(id){
+  accepted = accepted.filter(q => q.id !== id);
+  saveAccepted();
+  renderAccepted();
+}
+
+function renderAccepted(){
+  const box = $("acceptedList");
+  if(!box) return;
+
+  if(!accepted.length){
+    box.innerHTML = `<div class="muted">No accepted quests yet.</div>`;
+    return;
+  }
+
+  const byProv = accepted.reduce((acc, q) => {
+    const p = q.province || "Unknown";
+    (acc[p] ||= []).push(q);
+    return acc;
+  }, {});
+
+  const provs = Object.keys(byProv).sort((a,b)=>a.localeCompare(b));
+
+  box.innerHTML = provs.map(p => {
+    const items = byProv[p]
+      .sort((a,b)=>String(a.title).localeCompare(String(b.title)))
+      .map(q => `
+        <div class="accItem">
+          <div class="accTitle">${escapeHtml(q.title)}</div>
+          <div class="accMeta">
+            ${escapeHtml(q.settlement)} • ${escapeHtml(q.faction)} • Lv ${q.level_min}-${q.level_max}
+            <span style="float:right; cursor:pointer;" title="Remove" data-rm="${q.id}">✕</span>
+          </div>
+        </div>
+      `).join("");
+
+    return `<div class="accGroup">
+      <div class="accProv">${escapeHtml(p)}</div>
+      ${items}
+    </div>`;
+  }).join("");
+
+  // bind remove buttons
+  box.querySelectorAll("[data-rm]").forEach(el => {
+    el.addEventListener("click", () => removeAccepted(parseInt(el.getAttribute("data-rm"), 10)));
+  });
+}
+
 function isClanFaction(faction){
   return String(faction || "").startsWith("Clan ");
 }
@@ -18,9 +87,21 @@ function isTempleFaction(faction){
   return String(faction || "").startsWith("Temple of ");
 }
 function honourPass(q, clanHonour, templeHonour){
-  if(!q.honour_required || !q.honour_type) return true;
-  if(q.honour_type === "clan") return clanHonour >= q.honour_required;
-  if(q.honour_type === "temple") return templeHonour >= q.honour_required;
+  const hr = q.honour_required;
+  if(!hr) return true;
+
+  // supports both formats:
+  // 1) honour_required: { clan: 1 } / { temple: 2 }
+  // 2) honour_required: 2 + honour_type: "clan"/"temple" (legacy)
+  if(typeof hr === "object"){
+    if(typeof hr.clan === "number") return clanHonour >= hr.clan;
+    if(typeof hr.temple === "number") return templeHonour >= hr.temple;
+    return true;
+  }
+
+  if(!q.honour_type) return true;
+  if(q.honour_type === "clan") return clanHonour >= hr;
+  if(q.honour_type === "temple") return templeHonour >= hr;
   return true;
 }
 
@@ -47,26 +128,9 @@ function eligiblePool(){
 }
 
 function updateActiveFilters(f){
-  const rows = [
-    ["Province", f.province],
-    ["Faction", f.faction],
-    ["Quest Type", f.qtype],
-    ["Party Level", String(f.level)],
-    ["Clan Honour", String(f.clanHonour)],
-    ["Temple Honour", String(f.templeHonour)],
-  ];
-  const el = $("activeFilters");
-  el.innerHTML = "";
-  rows.forEach(([k,v]) => {
-    const kEl = document.createElement("div");
-    kEl.className = "k";
-    kEl.textContent = k;
-    const vEl = document.createElement("div");
-    vEl.className = "v";
-    vEl.textContent = v;
-    el.appendChild(kEl);
-    el.appendChild(vEl);
-  });
+  // Active Filters panel removed (intentionally).
+  // Keep this function so other code can call it harmlessly.
+  return;
 }
 
 function clampInt(v, min, max){
@@ -141,7 +205,29 @@ function renderParchments(list){
       });
     }
 
-    const sig = document.createElement("div");
+        const actions = document.createElement("div");
+    actions.className = "actions";
+
+    const btnAccept = document.createElement("button");
+    btnAccept.className = "btn accept";
+    btnAccept.type = "button";
+    btnAccept.textContent = "Accept";
+    btnAccept.addEventListener("click", () => acceptQuest(q));
+
+    const btnDecline = document.createElement("button");
+    btnDecline.className = "btn decline";
+    btnDecline.type = "button";
+    btnDecline.textContent = "Decline";
+    btnDecline.addEventListener("click", () => {
+      // remove from current shown and re-render
+      currentShown = currentShown.filter(x => x.id !== q.id);
+      renderParchments(currentShown);
+    });
+
+    actions.appendChild(btnAccept);
+    actions.appendChild(btnDecline);
+
+     const sig = document.createElement("div");
     sig.className = "sig";
     sig.textContent = `— ${q.posted_by || q.npc_name || q.npc || "Unsigned"}`;
 
@@ -150,6 +236,7 @@ function renderParchments(list){
     card.appendChild(title);
     card.appendChild(notice);
     card.appendChild(meta);
+    card.appendChild(actions);
     card.appendChild(sig);
 
     wrap.appendChild(card);
@@ -210,6 +297,7 @@ async function loadData(){
 
   $("loadedCount").textContent = String(state.all.length);
   eligiblePool(); // initialize counts + filter display
+   renderAccepted();
 }
 
 function escapeHtml(s){
@@ -229,18 +317,30 @@ function bind(){
   $("btnGenerate").addEventListener("click", () => {
     const pool = eligiblePool();
     const n = clampInt($("count").value, 1, 6);
-    renderParchments(sample(pool, n));
+    currentShown = sample(pool, n);
+renderParchments(currentShown);
   });
 
   $("btnClear").addEventListener("click", () => {
-    $("parchments").innerHTML = "";
-    $("emptyState").style.display = "block";
-  });
+  currentShown = [];
+  $("parchments").innerHTML = "";
+  $("emptyState").style.display = "block";
+});
+}
+
+function moveTopPanels(){
+  const slot = $("topRightPanels");
+  const pool = $("poolPanel");
+  const gates = $("gatesPanel");
+  if(!slot) return;
+  if(pool) slot.appendChild(pool);
+  if(gates) slot.appendChild(gates);
 }
 
 (async function init(){
   populateHonour();
   bind();
+  moveTopPanels();
   try{
     await loadData();
   }catch(e){
