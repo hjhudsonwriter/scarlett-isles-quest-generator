@@ -169,8 +169,8 @@ select:focus,input:focus{border-color:#ffffff33; box-shadow:0 0 0 3px #ffffff12}
     linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.42)),
     url("assets/ui/noticeboard.png");
 
-  background-size: cover;
-  background-position: center;
+  background-size: 120%;
+  background-position: center 45%;
   background-repeat: no-repeat;
 
   /* Subtle punch without looking like a filter bomb */
