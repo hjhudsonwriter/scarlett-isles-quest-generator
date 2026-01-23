@@ -196,6 +196,9 @@ select:focus,input:focus{border-color:#ffffff33; box-shadow:0 0 0 3px #ffffff12}
   display:grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap:16px;
+
+  max-width: 92%;      /* ⬅️ pulls content inward */
+  margin: 40px auto 0; /* keeps your vertical drop + centers */
 }
 
 .parchment{
