@@ -12,8 +12,13 @@ const state = {
 };
 
 const ACCEPTED_KEY = "si_noticeboard_accepted_v1";
+const OUTLINE_KEY  = "si_noticeboard_outlines_v1";
+
 let accepted = loadAccepted();
 let currentShown = []; // tracks what’s currently pinned
+
+let selectedAcceptedId = null;
+let outlineCache = loadOutlineCache();
 
 function loadAccepted(){
   try { return JSON.parse(localStorage.getItem(ACCEPTED_KEY) || "[]"); }
@@ -23,12 +28,240 @@ function saveAccepted(){
   localStorage.setItem(ACCEPTED_KEY, JSON.stringify(accepted));
 }
 
+function loadOutlineCache(){
+  try { return JSON.parse(localStorage.getItem(OUTLINE_KEY) || "{}"); }
+  catch { return {}; }
+}
+function saveOutlineCache(){
+  localStorage.setItem(OUTLINE_KEY, JSON.stringify(outlineCache));
+}
+
+function setSelectedAccepted(id){
+  selectedAcceptedId = id;
+  renderAccepted(); // updates highlight
+  const q = accepted.find(x => x.id === id);
+  renderQuestOutline(q || null);
+}
+
+function seededRand(seedStr){
+  // deterministic 0..1 based on string seed (stable per quest id)
+  let h = 2166136261;
+  for(let i=0;i<seedStr.length;i++){
+    h ^= seedStr.charCodeAt(i);
+    h = Math.imul(h, 16777619);
+  }
+  // convert to 0..1
+  return ((h >>> 0) % 10000) / 10000;
+}
+
+function pick(seedStr, arr){
+  if(!arr.length) return null;
+  const r = seededRand(seedStr);
+  return arr[Math.floor(r * arr.length)];
+}
+
+function getOrBuildOutline(q){
+  if(!q) return null;
+  const key = String(q.id);
+  if(outlineCache[key]) return outlineCache[key];
+
+  const outline = buildOutlineFromQuest(q);
+  outlineCache[key] = outline;
+  saveOutlineCache();
+  return outline;
+}
+
+function buildOutlineFromQuest(q){
+  const lvl = `${q.level_min}-${q.level_max}`;
+  const faction = String(q.faction || "Unknown");
+  const province = String(q.province || "Unknown");
+  const settlement = String(q.settlement || "Unknown");
+  const tags = Array.isArray(q.tags) ? q.tags : [];
+
+  const enemyBanks = {
+    Investigation: ["Root-Woken Scouts", "Vein-touched Wolves", "Smuggler Cutthroats", "Warden Renegades"],
+    Intrigue: ["Blackmail Crew", "Counterfeit Ring", "Temple Agents", "Dockside Enforcers"],
+    Escort: ["Road Ambushers", "Raiders", "Saboteur Cell", "Beast in the Brush"],
+    Retrieval: ["Lockhouse Thieves", "Relic-Hunters", "Tomb-Robbers", "False Priests"],
+    Diplomacy: ["Hotheaded Duelists", "Toll-Gang Lieutenants", "Rival Delegates (armed)", "Mob of Agitators"],
+    Exploration: ["Boundary Wardens", "Reef Predators", "Cave Stalkers", "Lost Patrol (hostile from fear)"],
+    Military: ["Bandit Toll-Fort", "Zealot Vanguard", "Warband Scouts", "Corrupted Brutes"],
+    Bounty: ["Wanted Lieutenant", "Smuggler Captain", "Deserter Sergeant", "Fence’s Bodyguards"],
+    Trade: ["Tariff Forgers", "Registry Saboteurs", "Warehouse Breakers", "Rival Brokers"]
+  };
+
+  const encounterType = pick(`encType:${q.id}`, ["Combat", "Chase", "Standoff", "Ambush"]);
+  const enemy = pick(`enemy:${q.id}`, enemyBanks[q.quest_type] || ["Unknown Threat"]);
+  const twist = pick(`twist:${q.id}`, [
+    "The ‘villain’ is being coerced by someone higher up.",
+    "The obvious suspect is a planted distraction.",
+    "The target isn’t malicious, just terrified and cornered.",
+    "A faction witness arrives mid-scene and complicates everything."
+  ]);
+
+  const checkBanks = {
+    Investigation: [
+      {skill:"Investigation", dc:13, win:"Find the key clue that points to the real location."},
+      {skill:"Perception", dc:12, win:"Spot the detail everyone else missed."},
+      {skill:"Insight", dc:12, win:"Clock who’s lying or withholding."}
+    ],
+    Intrigue: [
+      {skill:"Insight", dc:13, win:"Read the room and identify leverage."},
+      {skill:"Deception or Persuasion", dc:14, win:"Get access without raising alarms."},
+      {skill:"Stealth", dc:13, win:"Tail the suspect unseen."}
+    ],
+    Escort: [
+      {skill:"Survival", dc:13, win:"Choose the safe route and avoid the worst ground."},
+      {skill:"Perception", dc:12, win:"Spot the ambush early."},
+      {skill:"Animal Handling or Intimidation", dc:13, win:"Break enemy morale or calm mounts."}
+    ],
+    Retrieval: [
+      {skill:"Investigation", dc:13, win:"Locate the item’s last known trail."},
+      {skill:"Thieves’ Tools or Sleight of Hand", dc:14, win:"Bypass a lock, seal, or ward."},
+      {skill:"Arcana or Religion", dc:13, win:"Identify the magical ‘catch’ on the item."}
+    ],
+    Diplomacy: [
+      {skill:"Persuasion", dc:14, win:"Get both sides to agree to terms."},
+      {skill:"Insight", dc:12, win:"Identify what each side actually wants."},
+      {skill:"Intimidation", dc:13, win:"Stop a fight from starting (briefly)."}
+    ],
+    Exploration: [
+      {skill:"Survival", dc:13, win:"Navigate hazards without losing time."},
+      {skill:"Nature", dc:13, win:"Understand what the environment is ‘doing’."},
+      {skill:"Perception", dc:12, win:"Notice the danger before it’s on you."}
+    ],
+    Military: [
+      {skill:"Stealth", dc:13, win:"Approach unseen and choose your angle."},
+      {skill:"Athletics", dc:13, win:"Force entry or reposition fast."},
+      {skill:"Intimidation", dc:14, win:"Make the leader surrender instead of die."}
+    ],
+    Bounty: [
+      {skill:"Investigation", dc:13, win:"Confirm the target’s hideout."},
+      {skill:"Perception", dc:12, win:"Spot escape routes and traps."},
+      {skill:"Athletics or Acrobatics", dc:13, win:"Catch them when they bolt."}
+    ],
+    Trade: [
+      {skill:"Investigation", dc:13, win:"Trace the paperwork or registry change."},
+      {skill:"Persuasion", dc:12, win:"Get cooperation from a reluctant official."},
+      {skill:"Insight", dc:13, win:"Identify who profits and why."}
+    ]
+  };
+
+  const checks = checkBanks[q.quest_type] || [
+    {skill:"Investigation", dc:13, win:"Find the thread that ties it together."}
+  ];
+
+  const premise = `${q.description || q.notice || "A notice calls for help."}`;
+
+  const beats = [
+    `Briefing: Meet ${q.npc || q.posted_by || "the contact"} in ${settlement}. Get the real constraint (time, secrecy, or politics).`,
+    `Lead 1: Follow the first clue through ${province} rumours, records, or witnesses.`,
+    `Pressure: A complication hits (a rival faction, a lie exposed, or the trail goes cold).`,
+    `Lead 2: Identify the true location of the confrontation (warehouse, grove, dock, road choke-point).`,
+    `Confrontation: Resolve the main obstacle, then decide what you report back to ${faction}.`,
+    `Aftermath: The outcome shifts local tension in ${settlement} (favour gained, heat earned, or a new hook revealed).`
+  ];
+
+  const complication = pick(`comp:${q.id}`, [
+    "A witness demands protection and won’t talk otherwise.",
+    "A faction messenger arrives with an ultimatum.",
+    "The environment turns hostile (fog, roots, tide, tremor).",
+    "The party is offered a bribe to walk away."
+  ]);
+
+  const resolution = pick(`res:${q.id}`, [
+    "Return proof to the poster and claim the reward cleanly.",
+    "Deliver the truth quietly, but take a side-effect (a rival now knows you).",
+    "Solve it publicly to set an example, risking political backlash."
+  ]);
+
+  return {
+    title: q.title,
+    metaLine: `${settlement} • ${province} • ${faction} • Lv ${lvl} • ${q.reward_gp} gp`,
+    premise,
+    beats,
+    encounter: {
+      type: `${encounterType}`,
+      setup: `${encounterType} featuring: ${enemy}.`,
+      twist
+    },
+    checks: checks.map(c => ({...c})),
+    complication,
+    resolution: `${resolution} Reward: ${q.reward_gp} gp${(q.secondary_rewards && q.secondary_rewards.length) ? " + " + q.secondary_rewards.join(", ") : ""}.`,
+    pills: [
+      q.quest_type,
+      q.difficulty,
+      ...(tags.slice(0,3))
+    ].filter(Boolean)
+  };
+}
+
+function renderQuestOutline(q){
+  const body = $("leftPanelBody");
+  const titleEl = $("leftPanelTitle");
+  if(!body) return;
+
+  if(!q){
+    if(titleEl) titleEl.textContent = "Quest Outline";
+    body.innerHTML = `<div class="muted">Accept a quest, then click it to view an outline here.</div>`;
+    return;
+  }
+
+  const o = getOrBuildOutline(q);
+  if(titleEl) titleEl.textContent = "Quest Outline";
+
+  body.innerHTML = `
+    <div class="qoTitle">${escapeHtml(o.title)}</div>
+    <div class="qoMetaLine">${escapeHtml(o.metaLine)}</div>
+
+    <div class="qoSection">
+      <h3>Premise</h3>
+      <ul class="qoList"><li>${escapeHtml(o.premise)}</li></ul>
+      ${o.pills?.length ? `<div class="qoPillRow">${o.pills.map(p=>`<span class="qoPill">${escapeHtml(p)}</span>`).join("")}</div>` : ""}
+    </div>
+
+    <div class="qoSection">
+      <h3>Beats</h3>
+      <ul class="qoList">${o.beats.map(b=>`<li>${escapeHtml(b)}</li>`).join("")}</ul>
+    </div>
+
+    <div class="qoSection">
+      <h3>Encounter</h3>
+      <ul class="qoList">
+        <li><strong>${escapeHtml(o.encounter.type)}:</strong> ${escapeHtml(o.encounter.setup)}</li>
+        <li><strong>Twist:</strong> ${escapeHtml(o.encounter.twist)}</li>
+      </ul>
+    </div>
+
+    <div class="qoSection">
+      <h3>Key checks</h3>
+      <ul class="qoList">
+        ${o.checks.map(c=>`<li><strong>${escapeHtml(c.skill)} (DC ${c.dc}):</strong> ${escapeHtml(c.win)}</li>`).join("")}
+      </ul>
+    </div>
+
+    <div class="qoSection">
+      <h3>Complication</h3>
+      <ul class="qoList"><li>${escapeHtml(o.complication)}</li></ul>
+    </div>
+
+    <div class="qoSection">
+      <h3>Resolution</h3>
+      <ul class="qoList"><li>${escapeHtml(o.resolution)}</li></ul>
+    </div>
+  `;
+}
+
 function acceptQuest(q){
   if(!q || typeof q.id === "undefined") return;
   if(!accepted.some(x => x.id === q.id)){
     accepted.push(q);
     saveAccepted();
+    // build outline immediately so it’s ready on click
+    getOrBuildOutline(q);
     renderAccepted();
+  }
+  setSelectedAccepted(q.id); // auto-select
   }
 }
 
@@ -59,12 +292,15 @@ function renderAccepted(){
     const items = byProv[p]
       .sort((a,b)=>String(a.title).localeCompare(String(b.title)))
       .map(q => `
-        <div class="accItem">
-          <div class="accTitle">${escapeHtml(q.title)}</div>
-          <div class="accMeta">
-            ${escapeHtml(q.settlement)} • ${escapeHtml(q.faction)} • Lv ${q.level_min}-${q.level_max}
-            <span style="float:right; cursor:pointer;" title="Remove" data-rm="${q.id}">✕</span>
-          </div>
+        .map(q => `
+  <div class="accItem ${selectedAcceptedId===q.id ? "selected" : ""}" data-acc="${q.id}">
+    <div class="accTitle">${escapeHtml(q.title)}</div>
+    <div class="accMeta">
+      ${escapeHtml(q.settlement)} • ${escapeHtml(q.faction)} • Lv ${q.level_min}-${q.level_max}
+      <span style="float:right; cursor:pointer;" title="Remove" data-rm="${q.id}">✕</span>
+    </div>
+  </div>
+`)
         </div>
       `).join("");
 
@@ -74,11 +310,25 @@ function renderAccepted(){
     </div>`;
   }).join("");
 
-  // bind remove buttons
-  box.querySelectorAll("[data-rm]").forEach(el => {
-    el.addEventListener("click", () => removeAccepted(parseInt(el.getAttribute("data-rm"), 10)));
+  // bind select click
+box.querySelectorAll("[data-acc]").forEach(el => {
+  el.addEventListener("click", (e) => {
+    const id = parseInt(el.getAttribute("data-acc"), 10);
+    setSelectedAccepted(id);
   });
-}
+});
+
+// bind remove buttons (stop click bubbling)
+box.querySelectorAll("[data-rm]").forEach(el => {
+  el.addEventListener("click", (e) => {
+    e.stopPropagation();
+    removeAccepted(parseInt(el.getAttribute("data-rm"), 10));
+    if(selectedAcceptedId === parseInt(el.getAttribute("data-rm"), 10)){
+      selectedAcceptedId = null;
+      renderQuestOutline(null);
+    }
+  });
+});
 
 function isClanFaction(faction){
   return String(faction || "").startsWith("Clan ");
@@ -298,6 +548,7 @@ async function loadData(){
   $("loadedCount").textContent = String(state.all.length);
   eligiblePool(); // initialize counts + filter display
    renderAccepted();
+   renderQuestOutline(null);
 }
 
 function escapeHtml(s){
