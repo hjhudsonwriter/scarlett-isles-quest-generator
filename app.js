@@ -340,7 +340,7 @@ function moveTopPanels(){
 (async function init(){
   populateHonour();
   bind();
-  moveTopPanels();
+  requestAnimationFrame(moveTopPanels);
   try{
     await loadData();
   }catch(e){
