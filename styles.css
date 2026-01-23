@@ -6,6 +6,15 @@
   --bg-ink2:#12101a;
   --panel:  rgba(16, 13, 20, .72);
   --panel2: rgba(22, 17, 26, .72);
+    /* Noticeboard + parchment materials */
+  --wood1: #3a2416;
+  --wood2: #24160d;
+
+  --paper:  #efe1c2;
+  --paper2: #dfcaa0;
+
+  --ink: #1e160f;
+
     --ui: rgba(255,255,255,.06);
 
   --text:   #f3efe7;
@@ -56,26 +65,29 @@ a:hover{ color: var(--ember); }
   gap: 10px 14px;
 }
 
-/* brand spans across both columns */
+/* brand sits top-left */
 .brand{
-  grid-column: 1 / -1;
-  margin-bottom:0;
-}
-
-/* controls left on row 2 */
-.controls{
   grid-column: 1;
-  grid-row: 2;
+  grid-row: 1;
+  margin-bottom:0;
+  align-self:center;
 }
 
-/* panels right on row 2 */
+/* pool + how-it-gates sit top-right (green area) */
 .topRightPanels{
   grid-column: 2;
-  grid-row: 2;
+  grid-row: 1;
   display:flex;
   gap:12px;
   align-items:stretch;
   justify-content:flex-end;
+  align-self:center;
+}
+
+/* controls move to row 2 and span full width */
+.controls{
+  grid-column: 1 / -1;
+  grid-row: 2;
 }
 
 /* compact size to match red boxes */
