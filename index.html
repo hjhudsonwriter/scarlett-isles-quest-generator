@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Scarlett Isles – Notice Board Quest Generator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brandMark" aria-hidden="true"></div>
+      <div>
+        <h1>Scarlett Isles Notice Board</h1>
+        <p class="sub">Select province, set honour + party level, then pin fresh hooks.</p>
+      </div>
+    </div>
+
+    <div class="controls" role="group" aria-label="Quest generator controls">
+      <label>
+        Province
+        <select id="province">
+          <option value="ALL">All</option>
+        </select>
+      </label>
+
+      <label>
+        Party Level
+        <input id="level" type="number" min="7" max="16" value="7" />
+      </label>
+
+      <label>
+        Clan Honour
+        <select id="clanHonour"></select>
+      </label>
+
+      <label>
+        Temple Honour
+        <select id="templeHonour"></select>
+      </label>
+
+      <label>
+        Faction (optional)
+        <select id="faction">
+          <option value="ALL">All</option>
+        </select>
+      </label>
+
+      <label>
+        Quest Type (optional)
+        <select id="qtype">
+          <option value="ALL">All</option>
+        </select>
+      </label>
+
+      <label>
+        Count
+        <input id="count" type="number" min="1" max="6" value="3" />
+      </label>
+
+      <button id="btnGenerate" class="btn">Generate</button>
+      <button id="btnClear" class="btn ghost">Clear</button>
+    </div>
+  </header>
+
+  <main class="stage">
+    <section class="board" aria-label="Wooden notice board">
+      <div class="boardInner">
+        <div id="emptyState" class="empty">
+          <div class="emptyCard">
+            <div class="emptyTitle">No notices yet.</div>
+            <div class="emptyText">Hit <strong>Generate</strong> and the board will start whispering work your way.</div>
+          </div>
+        </div>
+
+        <div id="parchments" class="parchments"></div>
+      </div>
+    </section>
+
+    <aside class="sidebar" aria-label="Filters and results info">
+      <div class="panel">
+        <h2>Active Filters</h2>
+        <div id="activeFilters" class="kv"></div>
+      </div>
+
+      <div class="panel">
+        <h2>Pool</h2>
+        <div class="kv">
+          <div class="k">Eligible quests</div>
+          <div class="v" id="poolCount">—</div>
+          <div class="k">Loaded</div>
+          <div class="v" id="loadedCount">—</div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>How it gates</h2>
+        <ul class="small">
+          <li><strong>Civilian/Warden</strong> posts: no honour required.</li>
+          <li><strong>Clan</strong> posts: uses <em>Clan Honour</em>.</li>
+          <li><strong>Temple</strong> posts: uses <em>Temple Honour</em>.</li>
+          <li>Quest must match province (unless All) and party level within its range.</li>
+        </ul>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    <span>Made for The Scarlett Isles.</span>
+    <span class="muted">Data: <code>data/quests.json</code></span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
