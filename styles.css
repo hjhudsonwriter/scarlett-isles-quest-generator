@@ -336,7 +336,7 @@ select:focus,input:focus{border-color:#ffffff33; box-shadow:0 0 0 3px #ffffff12}
 /* shrink board (was full-height before) */
 .boardInner{
   min-height: 720px;
-  padding: 80px 18px 18px; /* ⬇️ pushes parchments down */
+  padding: 100px 18px 18px; /* ⬇️ pushes parchments down */
 }
 
 @media (max-width: 980px){
