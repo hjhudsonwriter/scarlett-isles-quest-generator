@@ -265,7 +265,6 @@ function acceptQuest(q){
   renderAccepted();
   setSelectedAccepted(q.id); // auto-select
 }
-}
 
 function removeAccepted(id){
   accepted = accepted.filter(q => q.id !== id);
