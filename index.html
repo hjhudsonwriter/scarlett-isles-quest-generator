@@ -8,6 +8,7 @@
 </head>
 <body>
   <header class="topbar">
+    <div class="topRightPanels" id="topRightPanels"></div>
     <div class="brand">
       <div class="brandMark" aria-hidden="true"></div>
       <div>
@@ -83,8 +84,30 @@
         <div id="activeFilters" class="kv"></div>
       </div>
 
+      <div class="centerRow">
+  <section id="leftPanel" class="sidePanel">
+    <div class="panelTitle"> </div>
+    <div class="panelBody" id="leftPanelBody"></div>
+  </section>
+
+  <section class="boardWrap">
+    <div class="board" id="board">
+      <div id="emptyState" class="emptyState">No eligible quests.</div>
+      <div id="parchments" class="parchments"></div>
+    </div>
+  </section>
+
+  <section id="acceptedPanel" class="sidePanel">
+    <div class="panelTitle">Accepted Quests</div>
+    <div class="panelBody" id="acceptedList"></div>
+  </section>
+</div>
+
       <div class="panel">
         <h2>Pool</h2>
+        <section class="panel" id="poolPanel">
+  <!-- existing Pool content -->
+</section>
         <div class="kv">
           <div class="k">Eligible quests</div>
           <div class="v" id="poolCount">—</div>
@@ -95,6 +118,9 @@
 
       <div class="panel">
         <h2>How it gates</h2>
+        <section class="panel" id="gatesPanel">
+  <!-- existing How it gates content -->
+</section>
         <ul class="small">
           <li><strong>Civilian/Warden</strong> posts: no honour required.</li>
           <li><strong>Clan</strong> posts: uses <em>Clan Honour</em>.</li>
