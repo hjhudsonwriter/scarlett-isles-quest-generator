@@ -350,4 +350,63 @@ select:focus,input:focus{border-color:#ffffff33; box-shadow:0 0 0 3px #ffffff12}
   margin-bottom:8px;
 }
 .accTitle{ font-weight:800; color:#f3f0e8; }
-.accMeta{ opacity:.85; font-size:12px; margin-top:2px; }
+
+.accMeta{
+  opacity:.85;
+  font-size:12px;
+  margin-top:2px;
+}
+
+/* Clickable accepted quest items */
+.accItem{ cursor:pointer; }
+.accItem:hover{ filter:brightness(1.06); }
+.accItem.selected{
+  border-color:#ffffff33;
+  box-shadow: 0 0 0 3px #ffffff12;
+}
+
+/* Quest outline formatting (left panel) */
+.qoTitle{
+  font-weight:900;
+  font-size:14px;
+  color:#f3f0e8;
+  margin:0 0 10px;
+}
+.qoSection{
+  margin:12px 0 0;
+  padding-top:10px;
+  border-top:1px solid #ffffff12;
+}
+.qoSection h3{
+  margin:0 0 6px;
+  font-size:12px;
+  letter-spacing:.3px;
+  text-transform:uppercase;
+  color:#cfc8ba;
+}
+.qoList{
+  margin:0;
+  padding-left:18px;
+  color:#cfc8ba;
+  font-size:13px;
+  line-height:1.35;
+}
+.qoMetaLine{
+  font-size:12px;
+  color:#9c9487;
+  margin: 0 0 10px;
+}
+.qoPillRow{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  margin: 8px 0 0;
+}
+.qoPill{
+  font-size:11px;
+  padding:4px 8px;
+  border-radius:999px;
+  background:#ffffff0a;
+  border:1px solid #ffffff12;
+  color:#cfc8ba;
+}
