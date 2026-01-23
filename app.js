@@ -254,15 +254,17 @@ function renderQuestOutline(q){
 
 function acceptQuest(q){
   if(!q || typeof q.id === "undefined") return;
+
   if(!accepted.some(x => x.id === q.id)){
     accepted.push(q);
     saveAccepted();
     // build outline immediately so it’s ready on click
     getOrBuildOutline(q);
-    renderAccepted();
   }
+
+  renderAccepted();
   setSelectedAccepted(q.id); // auto-select
-  }
+}
 }
 
 function removeAccepted(id){
@@ -292,15 +294,12 @@ function renderAccepted(){
     const items = byProv[p]
       .sort((a,b)=>String(a.title).localeCompare(String(b.title)))
       .map(q => `
-        .map(q => `
-  <div class="accItem ${selectedAcceptedId===q.id ? "selected" : ""}" data-acc="${q.id}">
-    <div class="accTitle">${escapeHtml(q.title)}</div>
-    <div class="accMeta">
-      ${escapeHtml(q.settlement)} • ${escapeHtml(q.faction)} • Lv ${q.level_min}-${q.level_max}
-      <span style="float:right; cursor:pointer;" title="Remove" data-rm="${q.id}">✕</span>
-    </div>
-  </div>
-`)
+        <div class="accItem ${selectedAcceptedId===q.id ? "selected" : ""}" data-acc="${q.id}">
+          <div class="accTitle">${escapeHtml(q.title)}</div>
+          <div class="accMeta">
+            ${escapeHtml(q.settlement)} • ${escapeHtml(q.faction)} • Lv ${q.level_min}-${q.level_max}
+            <span style="float:right; cursor:pointer;" title="Remove" data-rm="${q.id}">✕</span>
+          </div>
         </div>
       `).join("");
 
@@ -311,24 +310,26 @@ function renderAccepted(){
   }).join("");
 
   // bind select click
-box.querySelectorAll("[data-acc]").forEach(el => {
-  el.addEventListener("click", (e) => {
-    const id = parseInt(el.getAttribute("data-acc"), 10);
-    setSelectedAccepted(id);
+  box.querySelectorAll("[data-acc]").forEach(el => {
+    el.addEventListener("click", () => {
+      const id = parseInt(el.getAttribute("data-acc"), 10);
+      setSelectedAccepted(id);
+    });
   });
-});
 
-// bind remove buttons (stop click bubbling)
-box.querySelectorAll("[data-rm]").forEach(el => {
-  el.addEventListener("click", (e) => {
-    e.stopPropagation();
-    removeAccepted(parseInt(el.getAttribute("data-rm"), 10));
-    if(selectedAcceptedId === parseInt(el.getAttribute("data-rm"), 10)){
-      selectedAcceptedId = null;
-      renderQuestOutline(null);
-    }
+  // bind remove buttons (stop click bubbling)
+  box.querySelectorAll("[data-rm]").forEach(el => {
+    el.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const rid = parseInt(el.getAttribute("data-rm"), 10);
+      removeAccepted(rid);
+      if(selectedAcceptedId === rid){
+        selectedAcceptedId = null;
+        renderQuestOutline(null);
+      }
+    });
   });
-});
+}
 
 function isClanFaction(faction){
   return String(faction || "").startsWith("Clan ");
