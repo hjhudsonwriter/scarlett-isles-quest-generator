@@ -170,7 +170,7 @@ select:focus,input:focus{border-color:#ffffff33; box-shadow:0 0 0 3px #ffffff12}
     url("assets/ui/noticeboard.png");
 
   background-size: 200%;
-  background-position: center 45%;
+  background-position: center 60%;
   background-repeat: no-repeat;
 
   /* Subtle punch without looking like a filter bomb */
