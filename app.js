@@ -143,7 +143,7 @@ function renderParchments(list){
 
     const sig = document.createElement("div");
     sig.className = "sig";
-    sig.textContent = `— ${q.posted_by || q.npc_name || "Unsigned"}`;
+    sig.textContent = `— ${q.posted_by || q.npc_name || q.npc || "Unsigned"}`;
 
     card.appendChild(nail1);
     card.appendChild(nail2);
