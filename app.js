@@ -113,7 +113,7 @@ function renderParchments(list){
 
     const notice = document.createElement("p");
     notice.className = "notice";
-    notice.textContent = q.notice;
+    notice.textContent = q.notice || q.description || q.summary || "";
 
     const meta = document.createElement("div");
     meta.className = "meta";
