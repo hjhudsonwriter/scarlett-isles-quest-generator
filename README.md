@@ -1,0 +1,1 @@
+# scarlett-isles-quest-generator
