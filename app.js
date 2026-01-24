@@ -259,8 +259,8 @@ async function expandQuestOnce(quest) {
   const cached = localStorage.getItem(key);
   if (cached) return JSON.parse(cached);
 
-  const res = await fetch(
-    "https://scarlett-isles-quest-generator.hjhudson-writer.workers.dev",
+   const WORKER_URL = "https://scarlett-isles-quest-generator.hjhudson-writer.workers.dev";  
+   const res = await fetch("https://scarlett-isles-quest-generator.hjhudson-writer.workers.dev",
     {
       method: "POST",
       headers: { "Content-Type": "application/json" },
