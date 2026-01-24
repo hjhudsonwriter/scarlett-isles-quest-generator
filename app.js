@@ -490,6 +490,7 @@ function renderParchments(list){
     card.appendChild(sig);
 
     wrap.appendChild(card);
+    syncBoardToPopout(); 
   });
 }
 
@@ -578,6 +579,68 @@ renderParchments(currentShown);
   $("emptyState").style.display = "block";
 });
 }
+
+let popWin = null;
+
+function openBoardPopout(){
+  // If already open, focus it
+  if(popWin && !popWin.closed){
+    popWin.focus();
+    syncBoardToPopout();
+    return;
+  }
+
+  popWin = window.open("", "si_board_popout", "width=1100,height=800");
+  if(!popWin) return; // popup blocked
+
+  // Build a simple standalone document that loads your same CSS
+  popWin.document.open();
+  popWin.document.write(`
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Scarlett Isles Noticeboard</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Popout-only tweaks */
+    body{ margin:0; }
+    .stage{ padding:14px; }
+    .centerRow{ grid-template-columns: 1fr; }
+    /* hide side panels if they exist in copied HTML */
+    #leftPanel, #rightPanel, #acceptedPanel, .sidePanel{ display:none !important; }
+    /* make board fill the window nicely */
+    .board{ max-width: 1200px; margin: 0 auto; }
+  </style>
+</head>
+<body>
+  <div class="stage">
+    <div id="popBoardHost"></div>
+  </div>
+</body>
+</html>
+  `);
+  popWin.document.close();
+
+  // Wait a tick for DOM to exist
+  setTimeout(syncBoardToPopout, 50);
+}
+
+function syncBoardToPopout(){
+  if(!popWin || popWin.closed) return;
+
+  const board = document.querySelector(".board");
+  const host = popWin.document.getElementById("popBoardHost");
+  if(!board || !host) return;
+
+  // Clone the noticeboard panel only
+  host.innerHTML = "";
+  host.appendChild(board.cloneNode(true));
+}
+
+document.getElementById("btnPopOut")?.addEventListener("click", openBoardPopout);
+
 
 function moveTopPanels(){
   const slot = $("topRightPanels");
