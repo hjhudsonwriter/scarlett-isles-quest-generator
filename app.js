@@ -265,6 +265,7 @@ async function expandQuestOnce(quest) {
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify(quest)
 });
+  }
 
   if (!res.ok) {
     throw new Error("Quest expansion failed");
