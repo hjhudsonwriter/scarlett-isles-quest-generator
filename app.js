@@ -260,7 +260,7 @@ async function expandQuestOnce(quest) {
   if (cached) return JSON.parse(cached);
 
   const res = await fetch(
-    "https://nightwood-quest-expander.workers.dev",
+    "https://scarlett-isles-quest-generator.hjhudson-writer.workers.dev",
     {
       method: "POST",
       headers: { "Content-Type": "application/json" },
