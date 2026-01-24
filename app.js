@@ -260,13 +260,11 @@ async function expandQuestOnce(quest) {
   if (cached) return JSON.parse(cached);
 
    const WORKER_URL = "https://scarlett-isles-quest-generator.hjhudson-writer.workers.dev";  
-   const res = await fetch("https://scarlett-isles-quest-generator.hjhudson-writer.workers.dev",
-    {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(quest)
-    }
-  );
+   const res = await fetch(WORKER_URL, {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(quest)
+});
 
   if (!res.ok) {
     throw new Error("Quest expansion failed");
