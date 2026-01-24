@@ -252,6 +252,31 @@ function renderQuestOutline(q){
   `;
 }
 
+async function expandQuestOnce(quest) {
+  const key = `expanded_${quest.id}`;
+
+  // Cache check
+  const cached = localStorage.getItem(key);
+  if (cached) return JSON.parse(cached);
+
+  const res = await fetch(
+    "https://nightwood-quest-expander.workers.dev",
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(quest)
+    }
+  );
+
+  if (!res.ok) {
+    throw new Error("Quest expansion failed");
+  }
+
+  const data = await res.json();
+  localStorage.setItem(key, JSON.stringify(data));
+  return data;
+}
+
 function acceptQuest(q){
   if(!q || typeof q.id === "undefined") return;
 
