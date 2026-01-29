@@ -54,15 +54,15 @@ a:hover{ color: var(--ember); }
 .muted{ color: var(--muted); }
 
 .topbar{
-  padding:16px 18px;
+  padding:14px 18px;
   border-bottom:1px solid #ffffff12;
   background: linear-gradient(180deg, #0e1118 0%, #0b0c0f 100%);
   position:sticky; top:0; z-index:5;
 
   display:grid;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: auto auto;
-  gap: 10px 14px;
+  grid-template-columns: auto auto 1fr;
+  align-items:center;
+  gap:14px;
 }
 
 /* brand sits top-left */
@@ -351,6 +351,16 @@ select:focus,input:focus{border-color:#ffffff33; box-shadow:0 0 0 3px #ffffff12}
     justify-content:flex-start;
     flex-wrap:wrap;
   }
+
+  .topbar #poolPanel{
+  width: 220px;
+  padding: 10px 12px;
+}
+
+.topbar #poolPanel h2{
+  margin-bottom:6px;
+  font-size:12px;
+}
 
   .centerRow{
     grid-template-columns: 1fr;
