@@ -252,20 +252,11 @@ function renderQuestOutline(q){
   `;
 }
 
-async function expandQuestOnce(quest) {
-  const key = `expanded_${quest.id}`;
-
-  // Cache check
-  const cached = localStorage.getItem(key);
-  if (cached) return JSON.parse(cached);
-
-   const WORKER_URL = "https://scarlett-isles-quest-generator.hjhudson-writer.workers.dev";  
-   const res = await fetch(WORKER_URL, {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify(quest)
-});
-  }
+// (Disabled for now) Cloudflare Worker quest expansion.
+// Your app currently uses local deterministic outlines (buildOutlineFromQuest).
+async function expandQuestOnce(quest){
+  throw new Error("expandQuestOnce is disabled (not wired in yet).");
+}
 
   if (!res.ok) {
     throw new Error("Quest expansion failed");
