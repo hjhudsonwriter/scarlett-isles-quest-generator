@@ -258,15 +258,6 @@ async function expandQuestOnce(quest){
   throw new Error("expandQuestOnce is disabled (not wired in yet).");
 }
 
-  if (!res.ok) {
-    throw new Error("Quest expansion failed");
-  }
-
-  const data = await res.json();
-  localStorage.setItem(key, JSON.stringify(data));
-  return data;
-}
-
 function acceptQuest(q){
   if(!q || typeof q.id === "undefined") return;
 
