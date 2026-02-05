@@ -4,22 +4,74 @@
     "party_level_min": 7,
     "party_level_max": 16,
     "currency": "gp",
-    "filters": ["province", "faction", "quest_type", "party_level", "clan_honour", "temple_honour", "difficulty"],
+    "filters": [
+      "province",
+      "faction",
+      "quest_type",
+      "party_level",
+      "clan_honour",
+      "temple_honour",
+      "difficulty"
+    ],
     "regions": {
-      "Western Province": { "ruling_clan": "Clan Farmer", "active_temple": "Temple of Aurush", "clan_leader": "Chief Logan Farmer" },
-      "Eastern Province": { "ruling_clan": "Clan Slade", "active_temple": "Temple of Telluria", "clan_leader": "Chief Harlan Slade" },
-      "Midland Province": { "ruling_clan": "Clan Bacca", "active_temple": "Temple of Telluria", "clan_leader": "Chief Ario Bacca" },
-      "Northern Province": { "ruling_clan": "Clan Blackstone", "active_temple": "Temple of Telluria", "clan_leader": "Chief Boris Blackstone" },
-      "Southern Province": { "ruling_clan": "Clan Molten", "active_temple": "Temple of Aurush", "clan_leader": "Chief Callum Molten" },
-      "The North Isle": { "ruling_clan": "Clan Karr", "active_temple": "Temple of Pelagos", "clan_leader": "Chief Helga Karr" },
-      "The East Isle": { "ruling_clan": "Clan Rowthorn", "active_temple": "Temple of Pelagos", "clan_leader": "Chief Doran Rowthorn" },
-      "The Bolt Isle": { "ruling_clan": null, "active_temple": null, "clan_leader": null }
+      "Western Province": {
+        "ruling_clan": "Clan Farmer",
+        "active_temple": "Temple of Aurush",
+        "clan_leader": "Chief Logan Farmer"
+      },
+      "Eastern Province": {
+        "ruling_clan": "Clan Slade",
+        "active_temple": "Temple of Telluria",
+        "clan_leader": "Chief Harlan Slade"
+      },
+      "Midland Province": {
+        "ruling_clan": "Clan Bacca",
+        "active_temple": "Temple of Telluria",
+        "clan_leader": "Chief Ario Bacca"
+      },
+      "Northern Province": {
+        "ruling_clan": "Clan Blackstone",
+        "active_temple": "Temple of Telluria",
+        "clan_leader": "Chief Boris Blackstone"
+      },
+      "Southern Province": {
+        "ruling_clan": "Clan Molten",
+        "active_temple": "Temple of Aurush",
+        "clan_leader": "Chief Callum Molten"
+      },
+      "The North Isle": {
+        "ruling_clan": "Clan Karr",
+        "active_temple": "Temple of Pelagos",
+        "clan_leader": "Chief Helga Karr"
+      },
+      "The East Isle": {
+        "ruling_clan": "Clan Rowthorn",
+        "active_temple": "Temple of Pelagos",
+        "clan_leader": "Chief Doran Rowthorn"
+      },
+      "The Bolt Isle": {
+        "ruling_clan": null,
+        "active_temple": null,
+        "clan_leader": null
+      }
     },
     "reward_bands_gp": {
-      "7-8": [250, 450],
-      "9-10": [500, 850],
-      "11-13": [1000, 1600],
-      "14-16": [2000, 3200]
+      "7-8": [
+        250,
+        450
+      ],
+      "9-10": [
+        500,
+        850
+      ],
+      "11-13": [
+        1000,
+        1600
+      ],
+      "14-16": [
+        2000,
+        3200
+      ]
     }
   },
   "quests": [
@@ -37,8 +89,14 @@
       "reward_gp": 320,
       "npc": "Warden-Captain Isembard",
       "description": "A beacon failed without storm. Find cause before ships abandon the coast.",
-      "secondary_rewards": ["Warden token: safe passage"],
-      "tags": ["Coast", "Urgent", "Mystery"]
+      "secondary_rewards": [
+        "Warden token: safe passage"
+      ],
+      "tags": [
+        "Coast",
+        "Urgent",
+        "Mystery"
+      ]
     },
     {
       "id": 2,
@@ -55,7 +113,11 @@
       "npc": "Harbormaster Relvane",
       "description": "Three cargos arrived. Four were paid. Someone wants it solved quietly.",
       "secondary_rewards": [],
-      "tags": ["City", "Politics", "Quiet"]
+      "tags": [
+        "City",
+        "Politics",
+        "Quiet"
+      ]
     },
     {
       "id": 3,
@@ -64,15 +126,23 @@
       "settlement": "Colver",
       "quest_type": "Diplomacy",
       "faction": "Clan Bacca",
-      "honour_required": { "clan": 1 },
+      "honour_required": {
+        "clan": 1
+      },
       "level_min": 7,
       "level_max": 8,
       "difficulty": "Moderate",
       "reward_gp": 420,
       "npc": "Thaneward Bronn",
       "description": "Boundary stones moved. Two towns ready to brawl. Settle it with words or proof.",
-      "secondary_rewards": ["Bacca favour: 1 mark"],
-      "tags": ["Dispute", "Clan", "Nonlethal"]
+      "secondary_rewards": [
+        "Bacca favour: 1 mark"
+      ],
+      "tags": [
+        "Dispute",
+        "Clan",
+        "Nonlethal"
+      ]
     },
     {
       "id": 4,
@@ -89,7 +159,11 @@
       "npc": "Sergeant Lera Wynn",
       "description": "A patrol never returned. No blood, no tracks, just an empty route.",
       "secondary_rewards": [],
-      "tags": ["City", "Missing", "Warden"]
+      "tags": [
+        "City",
+        "Missing",
+        "Warden"
+      ]
     },
     {
       "id": 5,
@@ -106,7 +180,11 @@
       "npc": "Dockmaster Rull",
       "description": "Tools vanish nightly from one pier. Catch the thief. Don’t start a riot.",
       "secondary_rewards": [],
-      "tags": ["City", "Crime", "Low-Heat"]
+      "tags": [
+        "City",
+        "Crime",
+        "Low-Heat"
+      ]
     },
     {
       "id": 6,
@@ -115,15 +193,23 @@
       "settlement": "Westreach",
       "quest_type": "Retrieval",
       "faction": "Temple of Aurush",
-      "honour_required": { "temple": 1 },
+      "honour_required": {
+        "temple": 1
+      },
       "level_min": 7,
       "level_max": 8,
       "difficulty": "Moderate",
       "reward_gp": 450,
       "npc": "Deacon Sava Lorne",
       "description": "A consecrated tithe-chest went missing on the road. Recover intact. No questions.",
-      "secondary_rewards": ["Aurush favour: minor rite"],
-      "tags": ["Temple", "Sacred", "Road"]
+      "secondary_rewards": [
+        "Aurush favour: minor rite"
+      ],
+      "tags": [
+        "Temple",
+        "Sacred",
+        "Road"
+      ]
     },
     {
       "id": 7,
@@ -140,7 +226,11 @@
       "npc": "Cartographer Elwin Sorrell",
       "description": "A bridge is ‘missing’ on every new map. Confirm whether it ever existed.",
       "secondary_rewards": [],
-      "tags": ["Travel", "Oddity", "Proof"]
+      "tags": [
+        "Travel",
+        "Oddity",
+        "Proof"
+      ]
     },
     {
       "id": 8,
@@ -149,15 +239,23 @@
       "settlement": "Redstone",
       "quest_type": "Escort",
       "faction": "Clan Farmer",
-      "honour_required": { "clan": 1 },
+      "honour_required": {
+        "clan": 1
+      },
       "level_min": 7,
       "level_max": 8,
       "difficulty": "Moderate",
       "reward_gp": 440,
       "npc": "Quartermaster Joryn Pike",
       "description": "Escort a fragile cargo under Farmer seal. Bandits know its value.",
-      "secondary_rewards": ["Farmer writ: 1 use road priority"],
-      "tags": ["Clan", "Trade", "Fragile"]
+      "secondary_rewards": [
+        "Farmer writ: 1 use road priority"
+      ],
+      "tags": [
+        "Clan",
+        "Trade",
+        "Fragile"
+      ]
     },
     {
       "id": 9,
@@ -173,8 +271,14 @@
       "reward_gp": 320,
       "npc": "Physician Elric Fenn",
       "description": "Rare reagents are needed from a guarded storehouse. Bring them quietly and intact.",
-      "secondary_rewards": ["Healer’s credit: 1 free treatment"],
-      "tags": ["Medical", "Stealth", "Time"]
+      "secondary_rewards": [
+        "Healer’s credit: 1 free treatment"
+      ],
+      "tags": [
+        "Medical",
+        "Stealth",
+        "Time"
+      ]
     },
     {
       "id": 10,
@@ -191,9 +295,12 @@
       "npc": "Mason Foreman Nella Greave",
       "description": "A noble promised pay then vanished. Bring contract proof or bring the debtor.",
       "secondary_rewards": [],
-      "tags": ["Contract", "Town", "Pressure"]
+      "tags": [
+        "Contract",
+        "Town",
+        "Pressure"
+      ]
     },
-
     {
       "id": 11,
       "title": "Coin Road Ambush",
@@ -201,15 +308,23 @@
       "settlement": "The City of Coin",
       "quest_type": "Bounty",
       "faction": "Clan Blackstone",
-      "honour_required": { "clan": 1 },
+      "honour_required": {
+        "clan": 1
+      },
       "level_min": 9,
       "level_max": 10,
       "difficulty": "Dangerous",
       "reward_gp": 780,
       "npc": "Aldric Blackstone",
       "description": "Caravans are hit with inside knowledge. Identify the leak and the leader.",
-      "secondary_rewards": ["Blackstone favour: 1 mark"],
-      "tags": ["Clan", "Caravan", "Intel"]
+      "secondary_rewards": [
+        "Blackstone favour: 1 mark"
+      ],
+      "tags": [
+        "Clan",
+        "Caravan",
+        "Intel"
+      ]
     },
     {
       "id": 12,
@@ -218,15 +333,23 @@
       "settlement": "Stillport",
       "quest_type": "Exploration",
       "faction": "Temple of Pelagos",
-      "honour_required": { "temple": 1 },
+      "honour_required": {
+        "temple": 1
+      },
       "level_min": 9,
       "level_max": 10,
       "difficulty": "Dangerous",
       "reward_gp": 700,
       "npc": "Tide-Priestess Kael Iryn",
       "description": "Currents shifted overnight. Investigate reefs and charts before the fleet sails.",
-      "secondary_rewards": ["Pelagos blessing: safe tide window"],
-      "tags": ["Temple", "Sea", "Navigation"]
+      "secondary_rewards": [
+        "Pelagos blessing: safe tide window"
+      ],
+      "tags": [
+        "Temple",
+        "Sea",
+        "Navigation"
+      ]
     },
     {
       "id": 13,
@@ -235,15 +358,23 @@
       "settlement": "Redport",
       "quest_type": "Retrieval",
       "faction": "Temple of Aurush",
-      "honour_required": { "temple": 1 },
+      "honour_required": {
+        "temple": 1
+      },
       "level_min": 9,
       "level_max": 10,
       "difficulty": "Dangerous",
       "reward_gp": 650,
       "npc": "Brother Caldus",
       "description": "A sanctified relic was seized unlawfully. Retrieve it without public scandal.",
-      "secondary_rewards": ["Aurush favour: minor rite"],
-      "tags": ["Temple", "Law", "Quiet"]
+      "secondary_rewards": [
+        "Aurush favour: minor rite"
+      ],
+      "tags": [
+        "Temple",
+        "Law",
+        "Quiet"
+      ]
     },
     {
       "id": 14,
@@ -252,15 +383,23 @@
       "settlement": "Steelport",
       "quest_type": "Escort",
       "faction": "Clan Slade",
-      "honour_required": { "clan": 1 },
+      "honour_required": {
+        "clan": 1
+      },
       "level_min": 9,
       "level_max": 10,
       "difficulty": "Dangerous",
       "reward_gp": 720,
       "npc": "Courier-Captain Voss Hain",
       "description": "Escort a sealed message to Chief Harlan. If opened, payment is void.",
-      "secondary_rewards": ["Slade favour: 1 mark"],
-      "tags": ["Clan", "Sealed", "Road"]
+      "secondary_rewards": [
+        "Slade favour: 1 mark"
+      ],
+      "tags": [
+        "Clan",
+        "Sealed",
+        "Road"
+      ]
     },
     {
       "id": 15,
@@ -269,15 +408,23 @@
       "settlement": "Goldport",
       "quest_type": "Investigation",
       "faction": "Clan Molten",
-      "honour_required": { "clan": 1 },
+      "honour_required": {
+        "clan": 1
+      },
       "level_min": 9,
       "level_max": 10,
       "difficulty": "Dangerous",
       "reward_gp": 800,
       "npc": "Harbour-Warden Sera Molt",
       "description": "Two berths are avoided by every crew. Find why, before trade bleeds away.",
-      "secondary_rewards": ["Molten trade pass: 1 week"],
-      "tags": ["Clan", "Commerce", "Harbour"]
+      "secondary_rewards": [
+        "Molten trade pass: 1 week"
+      ],
+      "tags": [
+        "Clan",
+        "Commerce",
+        "Harbour"
+      ]
     },
     {
       "id": 16,
@@ -294,7 +441,11 @@
       "npc": "Selka Dorn",
       "description": "A warehouse was sealed by garrison order. Owner wants the real reason.",
       "secondary_rewards": [],
-      "tags": ["City", "Military", "Secrets"]
+      "tags": [
+        "City",
+        "Military",
+        "Secrets"
+      ]
     },
     {
       "id": 17,
@@ -311,7 +462,11 @@
       "npc": "Toll-Keeper Bram Sudd",
       "description": "A new ‘toll’ is demanded by armed strangers. Make it stop without burning the bridge.",
       "secondary_rewards": [],
-      "tags": ["Road", "Extortion", "Choice"]
+      "tags": [
+        "Road",
+        "Extortion",
+        "Choice"
+      ]
     },
     {
       "id": 18,
@@ -320,15 +475,23 @@
       "settlement": "Midacre",
       "quest_type": "Exploration",
       "faction": "Temple of Telluria",
-      "honour_required": { "temple": 1 },
+      "honour_required": {
+        "temple": 1
+      },
       "level_min": 9,
       "level_max": 10,
       "difficulty": "Dangerous",
       "reward_gp": 650,
       "npc": "Priest-Geomancer Oren Vell",
       "description": "Verify a series of standing stones and record changes. Bring rubbings as proof.",
-      "secondary_rewards": ["Telluria favour: warding charm"],
-      "tags": ["Temple", "Survey", "Fieldwork"]
+      "secondary_rewards": [
+        "Telluria favour: warding charm"
+      ],
+      "tags": [
+        "Temple",
+        "Survey",
+        "Fieldwork"
+      ]
     },
     {
       "id": 19,
@@ -344,8 +507,14 @@
       "reward_gp": 600,
       "npc": "Watcher Harl",
       "description": "A watchman vanished mid-shift. No alarm. Only a cold cup of tea left behind.",
-      "secondary_rewards": ["Warden kit: 1 use signal flare"],
-      "tags": ["Tower", "Missing", "Odd"]
+      "secondary_rewards": [
+        "Warden kit: 1 use signal flare"
+      ],
+      "tags": [
+        "Tower",
+        "Missing",
+        "Odd"
+      ]
     },
     {
       "id": 20,
@@ -362,9 +531,12 @@
       "npc": "House Valmere Steward",
       "description": "A family relic vanished during a feast. No forced entry. No accusations. Yet.",
       "secondary_rewards": [],
-      "tags": ["Nobles", "Theft", "Quiet"]
+      "tags": [
+        "Nobles",
+        "Theft",
+        "Quiet"
+      ]
     },
-
     {
       "id": 21,
       "title": "The Governor’s Silence",
@@ -372,15 +544,23 @@
       "settlement": "Middlemount",
       "quest_type": "Intrigue",
       "faction": "Clan Bacca",
-      "honour_required": { "clan": 2 },
+      "honour_required": {
+        "clan": 2
+      },
       "level_min": 11,
       "level_max": 13,
       "difficulty": "Severe",
       "reward_gp": 1300,
       "npc": "Chief Ario Bacca",
       "description": "Three official letters vanished between provinces. Find who stopped them, and why.",
-      "secondary_rewards": ["Bacca authority writ: 1 use"],
-      "tags": ["Clan", "Politics", "Network"]
+      "secondary_rewards": [
+        "Bacca authority writ: 1 use"
+      ],
+      "tags": [
+        "Clan",
+        "Politics",
+        "Network"
+      ]
     },
     {
       "id": 22,
@@ -389,15 +569,23 @@
       "settlement": "West Beacon",
       "quest_type": "Investigation",
       "faction": "Clan Farmer",
-      "honour_required": { "clan": 2 },
+      "honour_required": {
+        "clan": 2
+      },
       "level_min": 11,
       "level_max": 13,
       "difficulty": "Severe",
       "reward_gp": 1400,
       "npc": "Chief Logan Farmer",
       "description": "Smoke seen offshore with no ships burning. Farmer wants the source found first.",
-      "secondary_rewards": ["Farmer supply claim: rations + oils"],
-      "tags": ["Clan", "Coast", "Suspicion"]
+      "secondary_rewards": [
+        "Farmer supply claim: rations + oils"
+      ],
+      "tags": [
+        "Clan",
+        "Coast",
+        "Suspicion"
+      ]
     },
     {
       "id": 23,
@@ -406,15 +594,23 @@
       "settlement": "Port Braedin",
       "quest_type": "Diplomacy",
       "faction": "Clan Rowthorn",
-      "honour_required": { "clan": 2 },
+      "honour_required": {
+        "clan": 2
+      },
       "level_min": 11,
       "level_max": 13,
       "difficulty": "Severe",
       "reward_gp": 1500,
       "npc": "Chief Doran Rowthorn",
       "description": "A foreign captain stands accused under Pelagos law. Ensure the judgment holds.",
-      "secondary_rewards": ["Rowthorn safe-harbour token"],
-      "tags": ["Clan", "Law", "Sea"]
+      "secondary_rewards": [
+        "Rowthorn safe-harbour token"
+      ],
+      "tags": [
+        "Clan",
+        "Law",
+        "Sea"
+      ]
     },
     {
       "id": 24,
@@ -423,15 +619,23 @@
       "settlement": "Icepoint",
       "quest_type": "Escort",
       "faction": "Clan Karr",
-      "honour_required": { "clan": 1 },
+      "honour_required": {
+        "clan": 1
+      },
       "level_min": 11,
       "level_max": 13,
       "difficulty": "Severe",
       "reward_gp": 1200,
       "npc": "Shield-Captain Runa Karr",
       "description": "Escort winter supplies across exposed passes. Raiders have learned the route.",
-      "secondary_rewards": ["Karr favour: 1 mark"],
-      "tags": ["Clan", "Cold", "Caravan"]
+      "secondary_rewards": [
+        "Karr favour: 1 mark"
+      ],
+      "tags": [
+        "Clan",
+        "Cold",
+        "Caravan"
+      ]
     },
     {
       "id": 25,
@@ -440,15 +644,23 @@
       "settlement": "Greyvale",
       "quest_type": "Exploration",
       "faction": "Temple of Telluria",
-      "honour_required": { "temple": 2 },
+      "honour_required": {
+        "temple": 2
+      },
       "level_min": 11,
       "level_max": 13,
       "difficulty": "Severe",
       "reward_gp": 1250,
       "npc": "Archivist Nerin Sile",
       "description": "Survey a reported ground-shear. Return sketches and stones. No embellishment.",
-      "secondary_rewards": ["Telluria favour: warding service"],
-      "tags": ["Temple", "Geology", "Proof"]
+      "secondary_rewards": [
+        "Telluria favour: warding service"
+      ],
+      "tags": [
+        "Temple",
+        "Geology",
+        "Proof"
+      ]
     },
     {
       "id": 26,
@@ -457,15 +669,23 @@
       "settlement": "The City of Coin",
       "quest_type": "Intrigue",
       "faction": "Clan Molten",
-      "honour_required": { "clan": 2 },
+      "honour_required": {
+        "clan": 2
+      },
       "level_min": 11,
       "level_max": 13,
       "difficulty": "Severe",
       "reward_gp": 1600,
       "npc": "Chief Callum Molten",
       "description": "Someone is forging Molten tariffs. Find the press and the buyer.",
-      "secondary_rewards": ["Molten trade privilege: 1 month"],
-      "tags": ["Clan", "Forgery", "Commerce"]
+      "secondary_rewards": [
+        "Molten trade privilege: 1 month"
+      ],
+      "tags": [
+        "Clan",
+        "Forgery",
+        "Commerce"
+      ]
     },
     {
       "id": 27,
@@ -474,15 +694,23 @@
       "settlement": "Nightwood",
       "quest_type": "Investigation",
       "faction": "Clan Blackstone",
-      "honour_required": { "clan": 2 },
+      "honour_required": {
+        "clan": 2
+      },
       "level_min": 11,
       "level_max": 13,
       "difficulty": "Severe",
       "reward_gp": 1200,
       "npc": "Chief Boris Blackstone",
       "description": "A bailiff vanished with tax ledgers. Return him or the books, but not excuses.",
-      "secondary_rewards": ["Blackstone seal: limited authority"],
-      "tags": ["Clan", "City", "Missing"]
+      "secondary_rewards": [
+        "Blackstone seal: limited authority"
+      ],
+      "tags": [
+        "Clan",
+        "City",
+        "Missing"
+      ]
     },
     {
       "id": 28,
@@ -499,7 +727,11 @@
       "npc": "Mint Inspector Corvin Hale",
       "description": "Counterfeit coin spreads fast. Identify the mould and the distributor.",
       "secondary_rewards": [],
-      "tags": ["Economy", "Investigation", "Underworld"]
+      "tags": [
+        "Economy",
+        "Investigation",
+        "Underworld"
+      ]
     },
     {
       "id": 29,
@@ -508,15 +740,23 @@
       "settlement": "Stillport",
       "quest_type": "Retrieval",
       "faction": "Temple of Pelagos",
-      "honour_required": { "temple": 2 },
+      "honour_required": {
+        "temple": 2
+      },
       "level_min": 11,
       "level_max": 13,
       "difficulty": "Severe",
       "reward_gp": 1200,
       "npc": "Tide-Speaker Maerys Vell",
       "description": "Recover an item lost to a wreck. The Temple demands it returned unbroken.",
-      "secondary_rewards": ["Pelagos favour: tide-route access"],
-      "tags": ["Temple", "Salvage", "Sea"]
+      "secondary_rewards": [
+        "Pelagos favour: tide-route access"
+      ],
+      "tags": [
+        "Temple",
+        "Salvage",
+        "Sea"
+      ]
     },
     {
       "id": 30,
@@ -532,10 +772,15 @@
       "reward_gp": 1500,
       "npc": "Ressa “Knifesmile” Kade",
       "description": "Outlaw captains demand neutral arbiters. Keep it bloodless, if you can.",
-      "secondary_rewards": ["Bolt Isle passphrase: 1 use"],
-      "tags": ["Pirates", "Talks", "Volatile"]
+      "secondary_rewards": [
+        "Bolt Isle passphrase: 1 use"
+      ],
+      "tags": [
+        "Pirates",
+        "Talks",
+        "Volatile"
+      ]
     },
-
     {
       "id": 31,
       "title": "The Sunward Ultimatum",
@@ -543,15 +788,23 @@
       "settlement": "Redport",
       "quest_type": "Military",
       "faction": "Temple of Aurush",
-      "honour_required": { "temple": 3 },
+      "honour_required": {
+        "temple": 3
+      },
       "level_min": 14,
       "level_max": 16,
       "difficulty": "Critical",
       "reward_gp": 3000,
       "npc": "High Inquisitor Varos Hale",
       "description": "A Temple action risks province-wide conflict. You are sent to stop escalation.",
-      "secondary_rewards": ["Aurush favour: major rite access"],
-      "tags": ["Temple", "War-Edge", "Political"]
+      "secondary_rewards": [
+        "Aurush favour: major rite access"
+      ],
+      "tags": [
+        "Temple",
+        "War-Edge",
+        "Political"
+      ]
     },
     {
       "id": 32,
@@ -560,15 +813,23 @@
       "settlement": "Bleakhold",
       "quest_type": "Escort",
       "faction": "Clan Karr",
-      "honour_required": { "clan": 2 },
+      "honour_required": {
+        "clan": 2
+      },
       "level_min": 14,
       "level_max": 16,
       "difficulty": "Critical",
       "reward_gp": 2800,
       "npc": "Chief Helga Karr",
       "description": "An oath-envoy must cross hostile waters. Failure means open feud.",
-      "secondary_rewards": ["Karr oath-ring: 1 audience granted"],
-      "tags": ["Clan", "High-Stakes", "Sea"]
+      "secondary_rewards": [
+        "Karr oath-ring: 1 audience granted"
+      ],
+      "tags": [
+        "Clan",
+        "High-Stakes",
+        "Sea"
+      ]
     },
     {
       "id": 33,
@@ -577,15 +838,23 @@
       "settlement": "Goldport",
       "quest_type": "Intrigue",
       "faction": "Clan Molten",
-      "honour_required": { "clan": 3 },
+      "honour_required": {
+        "clan": 3
+      },
       "level_min": 14,
       "level_max": 16,
       "difficulty": "Critical",
       "reward_gp": 3200,
       "npc": "Chief Callum Molten",
       "description": "A treaty draft is being auctioned privately. Acquire it before sunrise.",
-      "secondary_rewards": ["Molten writ: province-level leverage"],
-      "tags": ["Clan", "Auction", "Time"]
+      "secondary_rewards": [
+        "Molten writ: province-level leverage"
+      ],
+      "tags": [
+        "Clan",
+        "Auction",
+        "Time"
+      ]
     },
     {
       "id": 34,
@@ -594,15 +863,23 @@
       "settlement": "Nightwood",
       "quest_type": "Diplomacy",
       "faction": "Clan Blackstone",
-      "honour_required": { "clan": 3 },
+      "honour_required": {
+        "clan": 3
+      },
       "level_min": 14,
       "level_max": 16,
       "difficulty": "Critical",
       "reward_gp": 2600,
       "npc": "Chief Boris Blackstone",
       "description": "Prevent a duel between high captains. If it happens, the city fractures politically.",
-      "secondary_rewards": ["Blackstone favour: permanent contact"],
-      "tags": ["Clan", "City", "Crisis"]
+      "secondary_rewards": [
+        "Blackstone favour: permanent contact"
+      ],
+      "tags": [
+        "Clan",
+        "City",
+        "Crisis"
+      ]
     },
     {
       "id": 35,
@@ -611,15 +888,23 @@
       "settlement": "Bretan",
       "quest_type": "Intrigue",
       "faction": "Clan Slade",
-      "honour_required": { "clan": 2 },
+      "honour_required": {
+        "clan": 2
+      },
       "level_min": 14,
       "level_max": 16,
       "difficulty": "Critical",
       "reward_gp": 2400,
       "npc": "Chief Harlan Slade",
       "description": "A traitor will be tried in secret. Your job is to ensure the right witness arrives.",
-      "secondary_rewards": ["Slade favour: sealed information"],
-      "tags": ["Clan", "Secrecy", "Escort"]
+      "secondary_rewards": [
+        "Slade favour: sealed information"
+      ],
+      "tags": [
+        "Clan",
+        "Secrecy",
+        "Escort"
+      ]
     },
     {
       "id": 36,
@@ -628,15 +913,23 @@
       "settlement": "Middlemount",
       "quest_type": "Retrieval",
       "faction": "Temple of Telluria",
-      "honour_required": { "temple": 3 },
+      "honour_required": {
+        "temple": 3
+      },
       "level_min": 14,
       "level_max": 16,
       "difficulty": "Critical",
       "reward_gp": 2500,
       "npc": "High Priestess Merin Oathstone",
       "description": "Recover a sealed record from a compromised vault. No copies. No witnesses.",
-      "secondary_rewards": ["Telluria favour: major warding"],
-      "tags": ["Temple", "Vault", "Stealth"]
+      "secondary_rewards": [
+        "Telluria favour: major warding"
+      ],
+      "tags": [
+        "Temple",
+        "Vault",
+        "Stealth"
+      ]
     },
     {
       "id": 37,
@@ -645,15 +938,23 @@
       "settlement": "Port Braedin",
       "quest_type": "Diplomacy",
       "faction": "Temple of Pelagos",
-      "honour_required": { "temple": 3 },
+      "honour_required": {
+        "temple": 3
+      },
       "level_min": 14,
       "level_max": 16,
       "difficulty": "Critical",
       "reward_gp": 2300,
       "npc": "Tide-Judge Oslan Marr",
       "description": "Enforce Pelagos sea-law against a powerful offender. Bring proof, not bodies.",
-      "secondary_rewards": ["Pelagos favour: tide-route charter"],
-      "tags": ["Temple", "Law", "Proof"]
+      "secondary_rewards": [
+        "Pelagos favour: tide-route charter"
+      ],
+      "tags": [
+        "Temple",
+        "Law",
+        "Proof"
+      ]
     },
     {
       "id": 38,
@@ -669,8 +970,14 @@
       "reward_gp": 3200,
       "npc": "Varek Sorn",
       "description": "A wreck lies half-submerged. Survivors refuse to return. Cargo is still there.",
-      "secondary_rewards": ["Bolt Isle safe anchorage: 1 night"],
-      "tags": ["Pirates", "Salvage", "Risk"]
+      "secondary_rewards": [
+        "Bolt Isle safe anchorage: 1 night"
+      ],
+      "tags": [
+        "Pirates",
+        "Salvage",
+        "Risk"
+      ]
     },
     {
       "id": 39,
@@ -687,7 +994,11 @@
       "npc": "Broker Ysolde Vane",
       "description": "A blacklist threatens to collapse trade. Find who wrote it, and who paid for it.",
       "secondary_rewards": [],
-      "tags": ["Economy", "High-Society", "Secrets"]
+      "tags": [
+        "Economy",
+        "High-Society",
+        "Secrets"
+      ]
     },
     {
       "id": 40,
@@ -696,17 +1007,24 @@
       "settlement": "Cassmead",
       "quest_type": "Diplomacy",
       "faction": "Temple of Aurush",
-      "honour_required": { "temple": 2 },
+      "honour_required": {
+        "temple": 2
+      },
       "level_min": 14,
       "level_max": 16,
       "difficulty": "Critical",
       "reward_gp": 2400,
       "npc": "Flame-Canon Jessa Ryne",
       "description": "Two Aurushi cells threaten violence. You are sent to force accord before dawn.",
-      "secondary_rewards": ["Aurush favour: sanctioned services"],
-      "tags": ["Temple", "Internal", "Time"]
+      "secondary_rewards": [
+        "Aurush favour: sanctioned services"
+      ],
+      "tags": [
+        "Temple",
+        "Internal",
+        "Time"
+      ]
     },
-
     {
       "id": 41,
       "title": "The Missing Tar Book",
@@ -714,15 +1032,23 @@
       "settlement": "Highwater",
       "quest_type": "Investigation",
       "faction": "Clan Farmer",
-      "honour_required": { "clan": 1 },
+      "honour_required": {
+        "clan": 1
+      },
       "level_min": 7,
       "level_max": 8,
       "difficulty": "Moderate",
       "reward_gp": 420,
       "npc": "Bailiff Otho Kern",
       "description": "Port tariffs are missing. Find who took them before Chief Logan hears rumours.",
-      "secondary_rewards": ["Farmer writ: minor priority"],
-      "tags": ["Clan", "Paperwork", "Quiet"]
+      "secondary_rewards": [
+        "Farmer writ: minor priority"
+      ],
+      "tags": [
+        "Clan",
+        "Paperwork",
+        "Quiet"
+      ]
     },
     {
       "id": 42,
@@ -739,7 +1065,11 @@
       "npc": "Foreman Tilda Brack",
       "description": "Escort a wagon of stone and tools. Sabotage is suspected along the road.",
       "secondary_rewards": [],
-      "tags": ["Road", "Work", "Suspicion"]
+      "tags": [
+        "Road",
+        "Work",
+        "Suspicion"
+      ]
     },
     {
       "id": 43,
@@ -756,7 +1086,11 @@
       "npc": "Fence ‘Sweet’ Marrin",
       "description": "A stolen item is being sold tonight. Identify the seller, not just the goods.",
       "secondary_rewards": [],
-      "tags": ["Market", "Crime", "Observation"]
+      "tags": [
+        "Market",
+        "Crime",
+        "Observation"
+      ]
     },
     {
       "id": 44,
@@ -773,7 +1107,11 @@
       "npc": "Warden-Scout Nyra Vale",
       "description": "A fisher vanished near the marsh edge. Bring back the person or the truth.",
       "secondary_rewards": [],
-      "tags": ["Marsh", "Missing", "Search"]
+      "tags": [
+        "Marsh",
+        "Missing",
+        "Search"
+      ]
     },
     {
       "id": 45,
@@ -790,7 +1128,11 @@
       "npc": "Teamster Jorren Pike",
       "description": "Escort a merchant’s wagon. He insists the danger is ‘overblown’. Prove him wrong or right.",
       "secondary_rewards": [],
-      "tags": ["Road", "Merchant", "Practical"]
+      "tags": [
+        "Road",
+        "Merchant",
+        "Practical"
+      ]
     },
     {
       "id": 46,
@@ -799,15 +1141,23 @@
       "settlement": "Standish",
       "quest_type": "Diplomacy",
       "faction": "Clan Bacca",
-      "honour_required": { "clan": 1 },
+      "honour_required": {
+        "clan": 1
+      },
       "level_min": 9,
       "level_max": 10,
       "difficulty": "Dangerous",
       "reward_gp": 700,
       "npc": "Blade-Master Sorn Bacca",
       "description": "A duel is demanded over insult. Prevent bloodshed without insulting honour further.",
-      "secondary_rewards": ["Bacca favour: training access"],
-      "tags": ["Clan", "Honour", "Nonlethal"]
+      "secondary_rewards": [
+        "Bacca favour: training access"
+      ],
+      "tags": [
+        "Clan",
+        "Honour",
+        "Nonlethal"
+      ]
     },
     {
       "id": 47,
@@ -816,15 +1166,23 @@
       "settlement": "Midacre",
       "quest_type": "Retrieval",
       "faction": "Temple of Telluria",
-      "honour_required": { "temple": 1 },
+      "honour_required": {
+        "temple": 1
+      },
       "level_min": 7,
       "level_max": 8,
       "difficulty": "Moderate",
       "reward_gp": 380,
       "npc": "Scribe Halen Wyst",
       "description": "A borrowed text was never returned. Retrieve it without humiliating the borrower.",
-      "secondary_rewards": ["Telluria favour: minor blessing"],
-      "tags": ["Temple", "Books", "Quiet"]
+      "secondary_rewards": [
+        "Telluria favour: minor blessing"
+      ],
+      "tags": [
+        "Temple",
+        "Books",
+        "Quiet"
+      ]
     },
     {
       "id": 48,
@@ -833,15 +1191,23 @@
       "settlement": "Veldmere",
       "quest_type": "Intrigue",
       "faction": "Clan Slade",
-      "honour_required": { "clan": 1 },
+      "honour_required": {
+        "clan": 1
+      },
       "level_min": 7,
       "level_max": 8,
       "difficulty": "Moderate",
       "reward_gp": 430,
       "npc": "Captain Rook Vannis",
       "description": "A watchman is taking bribes. Slade wants proof before punishment.",
-      "secondary_rewards": ["Slade favour: 1 mark"],
-      "tags": ["Clan", "Proof", "Corruption"]
+      "secondary_rewards": [
+        "Slade favour: 1 mark"
+      ],
+      "tags": [
+        "Clan",
+        "Proof",
+        "Corruption"
+      ]
     },
     {
       "id": 49,
@@ -850,15 +1216,23 @@
       "settlement": "Moltenport",
       "quest_type": "Trade",
       "faction": "Clan Molten",
-      "honour_required": { "clan": 1 },
+      "honour_required": {
+        "clan": 1
+      },
       "level_min": 9,
       "level_max": 10,
       "difficulty": "Dangerous",
       "reward_gp": 780,
       "npc": "Dock-Registrar Vinna Molt",
       "description": "A port draft changed overnight. Ships are grounding. Find who altered the registry.",
-      "secondary_rewards": ["Molten trade pass: 1 week"],
-      "tags": ["Clan", "Harbour", "Forgery"]
+      "secondary_rewards": [
+        "Molten trade pass: 1 week"
+      ],
+      "tags": [
+        "Clan",
+        "Harbour",
+        "Forgery"
+      ]
     },
     {
       "id": 50,
@@ -867,17 +1241,24 @@
       "settlement": "Bleakhold",
       "quest_type": "Escort",
       "faction": "Clan Blackstone",
-      "honour_required": { "clan": 1 },
+      "honour_required": {
+        "clan": 1
+      },
       "level_min": 9,
       "level_max": 10,
       "difficulty": "Dangerous",
       "reward_gp": 820,
       "npc": "Captain Drenn Blackstone",
       "description": "Escort a prisoner to Nightwood. The prisoner claims the charge is false.",
-      "secondary_rewards": ["Blackstone favour: 1 mark"],
-      "tags": ["Clan", "Prisoner", "Moral"]
+      "secondary_rewards": [
+        "Blackstone favour: 1 mark"
+      ],
+      "tags": [
+        "Clan",
+        "Prisoner",
+        "Moral"
+      ]
     },
-
     {
       "id": 51,
       "title": "Coldharrow’s Vanished Skiff",
@@ -893,7 +1274,11 @@
       "npc": "Skipper Dain Roake",
       "description": "A skiff returned empty, neatly moored. Crew missing. No sign of struggle.",
       "secondary_rewards": [],
-      "tags": ["Coast", "Missing", "Eerie"]
+      "tags": [
+        "Coast",
+        "Missing",
+        "Eerie"
+      ]
     },
     {
       "id": 52,
@@ -910,7 +1295,11 @@
       "npc": "Shipwright Bren Holt",
       "description": "A ship plan was stolen from a locked office. Find thief before it’s sold to rivals.",
       "secondary_rewards": [],
-      "tags": ["Port", "Trade", "Theft"]
+      "tags": [
+        "Port",
+        "Trade",
+        "Theft"
+      ]
     },
     {
       "id": 53,
@@ -926,8 +1315,14 @@
       "reward_gp": 260,
       "npc": "Brenna Oakwright",
       "description": "A debtor is hiding in the city. Bring payment or bring the debtor, politely.",
-      "secondary_rewards": ["Free lodging: 2 nights"],
-      "tags": ["Inn", "Debt", "Soft"]
+      "secondary_rewards": [
+        "Free lodging: 2 nights"
+      ],
+      "tags": [
+        "Inn",
+        "Debt",
+        "Soft"
+      ]
     },
     {
       "id": 54,
@@ -936,15 +1331,23 @@
       "settlement": "Eastlook",
       "quest_type": "Escort",
       "faction": "Temple of Aurush",
-      "honour_required": { "temple": 2 },
+      "honour_required": {
+        "temple": 2
+      },
       "level_min": 11,
       "level_max": 13,
       "difficulty": "Severe",
       "reward_gp": 1350,
       "npc": "Canon-Guard Veyra Sunfall",
       "description": "Escort a public procession through hostile streets. Any scandal is failure.",
-      "secondary_rewards": ["Aurush favour: rite access"],
-      "tags": ["Temple", "Public", "Tense"]
+      "secondary_rewards": [
+        "Aurush favour: rite access"
+      ],
+      "tags": [
+        "Temple",
+        "Public",
+        "Tense"
+      ]
     },
     {
       "id": 55,
@@ -953,15 +1356,23 @@
       "settlement": "Windmere",
       "quest_type": "Trade",
       "faction": "Clan Slade",
-      "honour_required": { "clan": 2 },
+      "honour_required": {
+        "clan": 2
+      },
       "level_min": 11,
       "level_max": 13,
       "difficulty": "Severe",
       "reward_gp": 1200,
       "npc": "Steward Mael Harlan",
       "description": "Negotiate a grain pact before winter. Rival scribes are sabotaging terms.",
-      "secondary_rewards": ["Slade favour: 1 mark"],
-      "tags": ["Clan", "Trade", "Negotiation"]
+      "secondary_rewards": [
+        "Slade favour: 1 mark"
+      ],
+      "tags": [
+        "Clan",
+        "Trade",
+        "Negotiation"
+      ]
     },
     {
       "id": 56,
@@ -970,15 +1381,23 @@
       "settlement": "Pearlsmore",
       "quest_type": "Investigation",
       "faction": "Temple of Telluria",
-      "honour_required": { "temple": 2 },
+      "honour_required": {
+        "temple": 2
+      },
       "level_min": 11,
       "level_max": 13,
       "difficulty": "Severe",
       "reward_gp": 1100,
       "npc": "Bell-Keeper Ossa Lint",
       "description": "A temple bell won’t ring. Metal is intact. The silence is the problem.",
-      "secondary_rewards": ["Telluria favour: divination consult"],
-      "tags": ["Temple", "Oddity", "Local"]
+      "secondary_rewards": [
+        "Telluria favour: divination consult"
+      ],
+      "tags": [
+        "Temple",
+        "Oddity",
+        "Local"
+      ]
     },
     {
       "id": 57,
@@ -987,15 +1406,23 @@
       "settlement": "Cassmead",
       "quest_type": "Intrigue",
       "faction": "Clan Molten",
-      "honour_required": { "clan": 2 },
+      "honour_required": {
+        "clan": 2
+      },
       "level_min": 11,
       "level_max": 13,
       "difficulty": "Severe",
       "reward_gp": 1450,
       "npc": "Banner-Captain Orrin Molt",
       "description": "Someone marched under Molten colours committing crimes. Find the banner-maker.",
-      "secondary_rewards": ["Molten favour: 1 mark"],
-      "tags": ["Clan", "Impersonation", "Justice"]
+      "secondary_rewards": [
+        "Molten favour: 1 mark"
+      ],
+      "tags": [
+        "Clan",
+        "Impersonation",
+        "Justice"
+      ]
     },
     {
       "id": 58,
@@ -1004,15 +1431,23 @@
       "settlement": "Icepoint",
       "quest_type": "Diplomacy",
       "faction": "Temple of Pelagos",
-      "honour_required": { "temple": 2 },
+      "honour_required": {
+        "temple": 2
+      },
       "level_min": 11,
       "level_max": 13,
       "difficulty": "Severe",
       "reward_gp": 1200,
       "npc": "Wave-Priest Ralk Karr",
       "description": "A Pelagos rite was interrupted, and now crews refuse to sail. Restore trust with proof.",
-      "secondary_rewards": ["Pelagos favour: calm-sea passage"],
-      "tags": ["Temple", "Rite", "Sea"]
+      "secondary_rewards": [
+        "Pelagos favour: calm-sea passage"
+      ],
+      "tags": [
+        "Temple",
+        "Rite",
+        "Sea"
+      ]
     },
     {
       "id": 59,
@@ -1021,15 +1456,23 @@
       "settlement": "Port Braedin",
       "quest_type": "Bounty",
       "faction": "Clan Rowthorn",
-      "honour_required": { "clan": 1 },
+      "honour_required": {
+        "clan": 1
+      },
       "level_min": 9,
       "level_max": 10,
       "difficulty": "Dangerous",
       "reward_gp": 820,
       "npc": "Harbour-Captain Derren Roan",
       "description": "Smugglers move contraband under ‘sea-law’. Break their chain without breaking the port.",
-      "secondary_rewards": ["Rowthorn safe-harbour token"],
-      "tags": ["Clan", "Smuggling", "Harbour"]
+      "secondary_rewards": [
+        "Rowthorn safe-harbour token"
+      ],
+      "tags": [
+        "Clan",
+        "Smuggling",
+        "Harbour"
+      ]
     },
     {
       "id": 60,
@@ -1045,10 +1488,15 @@
       "reward_gp": 850,
       "npc": "Nessa ‘Harpoon’ Vale",
       "description": "A hostage note is pinned to the mast of an empty boat. Payment demanded in silence.",
-      "secondary_rewards": ["Bolt Isle contact: 1 favour"],
-      "tags": ["Pirates", "Rescue", "Trap?"]
+      "secondary_rewards": [
+        "Bolt Isle contact: 1 favour"
+      ],
+      "tags": [
+        "Pirates",
+        "Rescue",
+        "Trap?"
+      ]
     },
-
     {
       "id": 61,
       "title": "Mudrock’s Missing Paychest",
@@ -1064,7 +1512,11 @@
       "npc": "Foreman Jask Noll",
       "description": "A paychest vanished between two locked rooms. Somebody has a key, or a friend.",
       "secondary_rewards": [],
-      "tags": ["Town", "Theft", "Inside Job"]
+      "tags": [
+        "Town",
+        "Theft",
+        "Inside Job"
+      ]
     },
     {
       "id": 62,
@@ -1073,15 +1525,23 @@
       "settlement": "Cassmead",
       "quest_type": "Investigation",
       "faction": "Temple of Aurush",
-      "honour_required": { "temple": 1 },
+      "honour_required": {
+        "temple": 1
+      },
       "level_min": 9,
       "level_max": 10,
       "difficulty": "Dangerous",
       "reward_gp": 700,
       "npc": "Deacon Marrow Vell",
       "description": "Someone is performing unsanctioned rites. Identify them before the Temple does publicly.",
-      "secondary_rewards": ["Aurush favour: minor rite"],
-      "tags": ["Temple", "Internal", "Quiet"]
+      "secondary_rewards": [
+        "Aurush favour: minor rite"
+      ],
+      "tags": [
+        "Temple",
+        "Internal",
+        "Quiet"
+      ]
     },
     {
       "id": 63,
@@ -1090,15 +1550,23 @@
       "settlement": "Cull Sands",
       "quest_type": "Diplomacy",
       "faction": "Clan Molten",
-      "honour_required": { "clan": 1 },
+      "honour_required": {
+        "clan": 1
+      },
       "level_min": 9,
       "level_max": 10,
       "difficulty": "Dangerous",
       "reward_gp": 760,
       "npc": "Road-Marshal Keir Molt",
       "description": "Two toll crews are fighting over authority. Restore order before trade stalls.",
-      "secondary_rewards": ["Molten road pass: 1 week"],
-      "tags": ["Clan", "Road", "Dispute"]
+      "secondary_rewards": [
+        "Molten road pass: 1 week"
+      ],
+      "tags": [
+        "Clan",
+        "Road",
+        "Dispute"
+      ]
     },
     {
       "id": 64,
@@ -1107,15 +1575,23 @@
       "settlement": "Cassmead",
       "quest_type": "Investigation",
       "faction": "Temple of Aurush",
-      "honour_required": { "temple": 2 },
+      "honour_required": {
+        "temple": 2
+      },
       "level_min": 11,
       "level_max": 13,
       "difficulty": "Severe",
       "reward_gp": 1200,
       "npc": "Canon Sera Bright",
       "description": "Bodies were buried without rite. The Temple wants the reason before panic spreads.",
-      "secondary_rewards": ["Aurush favour: cleansing service"],
-      "tags": ["Temple", "Village", "Sensitive"]
+      "secondary_rewards": [
+        "Aurush favour: cleansing service"
+      ],
+      "tags": [
+        "Temple",
+        "Village",
+        "Sensitive"
+      ]
     },
     {
       "id": 65,
@@ -1132,7 +1608,11 @@
       "npc": "Old Branek",
       "description": "Two families threaten violence over irrigation rights. Settle it before sundown.",
       "secondary_rewards": [],
-      "tags": ["Rural", "Dispute", "Time"]
+      "tags": [
+        "Rural",
+        "Dispute",
+        "Time"
+      ]
     },
     {
       "id": 66,
@@ -1149,7 +1629,11 @@
       "npc": "Merrit Daw",
       "description": "Three farmhands vanished after payday. No tracks from the house, only from the road.",
       "secondary_rewards": [],
-      "tags": ["Rural", "Missing", "Worry"]
+      "tags": [
+        "Rural",
+        "Missing",
+        "Worry"
+      ]
     },
     {
       "id": 67,
@@ -1158,15 +1642,23 @@
       "settlement": "Woodbury",
       "quest_type": "Intrigue",
       "faction": "Clan Blackstone",
-      "honour_required": { "clan": 1 },
+      "honour_required": {
+        "clan": 1
+      },
       "level_min": 9,
       "level_max": 10,
       "difficulty": "Dangerous",
       "reward_gp": 780,
       "npc": "Sealwarden Perrin Blackstone",
       "description": "A counterfeit Blackstone seal is used to requisition goods. Find the forger.",
-      "secondary_rewards": ["Blackstone favour: 1 mark"],
-      "tags": ["Clan", "Forgery", "Authority"]
+      "secondary_rewards": [
+        "Blackstone favour: 1 mark"
+      ],
+      "tags": [
+        "Clan",
+        "Forgery",
+        "Authority"
+      ]
     },
     {
       "id": 68,
@@ -1183,7 +1675,11 @@
       "npc": "Caretaker Vanna Slate",
       "description": "A room has been locked from inside for days. No sound. No smell. Just silence.",
       "secondary_rewards": [],
-      "tags": ["Manor", "Eerie", "Closed"]
+      "tags": [
+        "Manor",
+        "Eerie",
+        "Closed"
+      ]
     },
     {
       "id": 69,
@@ -1192,15 +1688,23 @@
       "settlement": "Stonefield",
       "quest_type": "Retrieval",
       "faction": "Temple of Telluria",
-      "honour_required": { "temple": 1 },
+      "honour_required": {
+        "temple": 1
+      },
       "level_min": 7,
       "level_max": 8,
       "difficulty": "Moderate",
       "reward_gp": 390,
       "npc": "Deacon Rell Stonewise",
       "description": "Recover a cache of ritual stone taken by ‘collectors’. Return it without incident.",
-      "secondary_rewards": ["Telluria favour: minor warding"],
-      "tags": ["Temple", "Recovery", "Quiet"]
+      "secondary_rewards": [
+        "Telluria favour: minor warding"
+      ],
+      "tags": [
+        "Temple",
+        "Recovery",
+        "Quiet"
+      ]
     },
     {
       "id": 70,
@@ -1216,10 +1720,15 @@
       "reward_gp": 450,
       "npc": "Kelm ‘Rattle’ Sorn",
       "description": "A ‘tax’ is being demanded from locals by a new gang. Stop it without inviting worse.",
-      "secondary_rewards": ["Bolt Isle contact: 1 favour"],
-      "tags": ["Outlaws", "Extortion", "Choice"]
+      "secondary_rewards": [
+        "Bolt Isle contact: 1 favour"
+      ],
+      "tags": [
+        "Outlaws",
+        "Extortion",
+        "Choice"
+      ]
     },
-
     {
       "id": 71,
       "title": "The Blackstone Peace Meeting",
@@ -1227,15 +1736,23 @@
       "settlement": "Nightwood",
       "quest_type": "Diplomacy",
       "faction": "Clan Blackstone",
-      "honour_required": { "clan": 2 },
+      "honour_required": {
+        "clan": 2
+      },
       "level_min": 11,
       "level_max": 13,
       "difficulty": "Severe",
       "reward_gp": 1400,
       "npc": "Chief Boris Blackstone",
       "description": "Hostile delegates must meet under your protection. If talks fail, blame lands on you.",
-      "secondary_rewards": ["Blackstone seal: limited authority"],
-      "tags": ["Clan", "Diplomacy", "High-Pressure"]
+      "secondary_rewards": [
+        "Blackstone seal: limited authority"
+      ],
+      "tags": [
+        "Clan",
+        "Diplomacy",
+        "High-Pressure"
+      ]
     },
     {
       "id": 72,
@@ -1244,15 +1761,23 @@
       "settlement": "Highwater",
       "quest_type": "Military",
       "faction": "Clan Farmer",
-      "honour_required": { "clan": 2 },
+      "honour_required": {
+        "clan": 2
+      },
       "level_min": 11,
       "level_max": 13,
       "difficulty": "Severe",
       "reward_gp": 1500,
       "npc": "Chief Logan Farmer",
       "description": "Bandit toll posts are spreading. Remove them and bring the leader alive if possible.",
-      "secondary_rewards": ["Farmer supply claim: oils + arrows"],
-      "tags": ["Clan", "Road", "Bounty"]
+      "secondary_rewards": [
+        "Farmer supply claim: oils + arrows"
+      ],
+      "tags": [
+        "Clan",
+        "Road",
+        "Bounty"
+      ]
     },
     {
       "id": 73,
@@ -1261,15 +1786,23 @@
       "settlement": "Middlemount",
       "quest_type": "Diplomacy",
       "faction": "Clan Bacca",
-      "honour_required": { "clan": 3 },
+      "honour_required": {
+        "clan": 3
+      },
       "level_min": 14,
       "level_max": 16,
       "difficulty": "Critical",
       "reward_gp": 2500,
       "npc": "Chief Ario Bacca",
       "description": "Secure an accord between rival captains. Any insult risks civil fracture.",
-      "secondary_rewards": ["Bacca authority writ: province leverage"],
-      "tags": ["Clan", "Politics", "Delicate"]
+      "secondary_rewards": [
+        "Bacca authority writ: province leverage"
+      ],
+      "tags": [
+        "Clan",
+        "Politics",
+        "Delicate"
+      ]
     },
     {
       "id": 74,
@@ -1278,15 +1811,23 @@
       "settlement": "Moorcastle",
       "quest_type": "Intrigue",
       "faction": "Clan Slade",
-      "honour_required": { "clan": 3 },
+      "honour_required": {
+        "clan": 3
+      },
       "level_min": 14,
       "level_max": 16,
       "difficulty": "Critical",
       "reward_gp": 2400,
       "npc": "Chief Harlan Slade",
       "description": "A ledger of secrets is being sold. Acquire it without leaving a trail to Slade.",
-      "secondary_rewards": ["Slade favour: sealed intelligence"],
-      "tags": ["Clan", "Blackmail", "Stealth"]
+      "secondary_rewards": [
+        "Slade favour: sealed intelligence"
+      ],
+      "tags": [
+        "Clan",
+        "Blackmail",
+        "Stealth"
+      ]
     },
     {
       "id": 75,
@@ -1295,15 +1836,23 @@
       "settlement": "Stillport",
       "quest_type": "Exploration",
       "faction": "Temple of Pelagos",
-      "honour_required": { "temple": 3 },
+      "honour_required": {
+        "temple": 3
+      },
       "level_min": 14,
       "level_max": 16,
       "difficulty": "Critical",
       "reward_gp": 2600,
       "npc": "Deep-Reader Seln Marr",
       "description": "Chart a dangerous channel and return proof. Failure strands fleets for a season.",
-      "secondary_rewards": ["Pelagos charter: route privilege"],
-      "tags": ["Temple", "Sea", "Survey"]
+      "secondary_rewards": [
+        "Pelagos charter: route privilege"
+      ],
+      "tags": [
+        "Temple",
+        "Sea",
+        "Survey"
+      ]
     },
     {
       "id": 76,
@@ -1312,15 +1861,23 @@
       "settlement": "Icepoint",
       "quest_type": "Military",
       "faction": "Clan Karr",
-      "honour_required": { "clan": 3 },
+      "honour_required": {
+        "clan": 3
+      },
       "level_min": 14,
       "level_max": 16,
       "difficulty": "Critical",
       "reward_gp": 3000,
       "npc": "Chief Helga Karr",
       "description": "A raider flagship is rallying lesser crews. Break it. Bring back the banner.",
-      "secondary_rewards": ["Karr war-honour: 1 audience"],
-      "tags": ["Clan", "Sea", "Raiders"]
+      "secondary_rewards": [
+        "Karr war-honour: 1 audience"
+      ],
+      "tags": [
+        "Clan",
+        "Sea",
+        "Raiders"
+      ]
     },
     {
       "id": 77,
@@ -1329,15 +1886,23 @@
       "settlement": "Goldport",
       "quest_type": "Bounty",
       "faction": "Temple of Aurush",
-      "honour_required": { "temple": 2 },
+      "honour_required": {
+        "temple": 2
+      },
       "level_min": 11,
       "level_max": 13,
       "difficulty": "Severe",
       "reward_gp": 1500,
       "npc": "Inquisitor Ral Vane",
       "description": "Smugglers move illicit rite-goods. Capture leader alive for confession.",
-      "secondary_rewards": ["Aurush favour: sanctioned services"],
-      "tags": ["Temple", "Smuggling", "Bounty"]
+      "secondary_rewards": [
+        "Aurush favour: sanctioned services"
+      ],
+      "tags": [
+        "Temple",
+        "Smuggling",
+        "Bounty"
+      ]
     },
     {
       "id": 78,
@@ -1354,7 +1919,11 @@
       "npc": "Auctioneer Vessa Kline",
       "description": "A forbidden item will be auctioned. Identify the buyer and the sponsor.",
       "secondary_rewards": [],
-      "tags": ["City", "Auction", "Intel"]
+      "tags": [
+        "City",
+        "Auction",
+        "Intel"
+      ]
     },
     {
       "id": 79,
@@ -1371,7 +1940,11 @@
       "npc": "Master Blower Kett Renn",
       "description": "Workers refuse the kilns after an accident. Solve cause or strike becomes riot.",
       "secondary_rewards": [],
-      "tags": ["Town", "Labour", "Pressure"]
+      "tags": [
+        "Town",
+        "Labour",
+        "Pressure"
+      ]
     },
     {
       "id": 80,
@@ -1380,17 +1953,24 @@
       "settlement": "Blackwatch",
       "quest_type": "Retrieval",
       "faction": "Clan Molten",
-      "honour_required": { "clan": 2 },
+      "honour_required": {
+        "clan": 2
+      },
       "level_min": 11,
       "level_max": 13,
       "difficulty": "Severe",
       "reward_gp": 1200,
       "npc": "Border Clerk Yorr Molt",
       "description": "Border papers were stolen before inspection. Recover them before dawn roll-call.",
-      "secondary_rewards": ["Molten road pass: 1 week"],
-      "tags": ["Clan", "Documents", "Time"]
+      "secondary_rewards": [
+        "Molten road pass: 1 week"
+      ],
+      "tags": [
+        "Clan",
+        "Documents",
+        "Time"
+      ]
     },
-
     {
       "id": 81,
       "title": "The Bolt Isle False Rescue",
@@ -1405,8 +1985,14 @@
       "reward_gp": 420,
       "npc": "Perr ‘Crab’ Dorne",
       "description": "A ‘rescue’ crew lures ships onto rocks. Identify them without being lured yourself.",
-      "secondary_rewards": ["Bolt Isle safe anchorage: 1 night"],
-      "tags": ["Outlaws", "Trap", "Coast"]
+      "secondary_rewards": [
+        "Bolt Isle safe anchorage: 1 night"
+      ],
+      "tags": [
+        "Outlaws",
+        "Trap",
+        "Coast"
+      ]
     },
     {
       "id": 82,
@@ -1415,15 +2001,23 @@
       "settlement": "Icepoint",
       "quest_type": "Diplomacy",
       "faction": "Clan Karr",
-      "honour_required": { "clan": 1 },
+      "honour_required": {
+        "clan": 1
+      },
       "level_min": 9,
       "level_max": 10,
       "difficulty": "Dangerous",
       "reward_gp": 780,
       "npc": "Oath-Speaker Juna Karr",
       "description": "A broken oath threatens blood feud. Bring the offender to speak or to pay.",
-      "secondary_rewards": ["Karr favour: 1 mark"],
-      "tags": ["Clan", "Honour", "Moral"]
+      "secondary_rewards": [
+        "Karr favour: 1 mark"
+      ],
+      "tags": [
+        "Clan",
+        "Honour",
+        "Moral"
+      ]
     },
     {
       "id": 83,
@@ -1432,15 +2026,23 @@
       "settlement": "Port Braedin",
       "quest_type": "Retrieval",
       "faction": "Temple of Pelagos",
-      "honour_required": { "temple": 1 },
+      "honour_required": {
+        "temple": 1
+      },
       "level_min": 7,
       "level_max": 8,
       "difficulty": "Moderate",
       "reward_gp": 420,
       "npc": "Charmwright Olan Roan",
       "description": "A crate of salt-charms was stolen. Return it before crews refuse to sail.",
-      "secondary_rewards": ["Pelagos favour: minor tide-blessing"],
-      "tags": ["Temple", "Theft", "Harbour"]
+      "secondary_rewards": [
+        "Pelagos favour: minor tide-blessing"
+      ],
+      "tags": [
+        "Temple",
+        "Theft",
+        "Harbour"
+      ]
     },
     {
       "id": 84,
@@ -1449,15 +2051,23 @@
       "settlement": "Harrowfield",
       "quest_type": "Escort",
       "faction": "Temple of Telluria",
-      "honour_required": { "temple": 1 },
+      "honour_required": {
+        "temple": 1
+      },
       "level_min": 9,
       "level_max": 10,
       "difficulty": "Dangerous",
       "reward_gp": 650,
       "npc": "Stonewright Cenn Voss",
       "description": "Escort a stonewright to inspect a cracked shrine. Locals are hostile to outsiders.",
-      "secondary_rewards": ["Telluria favour: warding charm"],
-      "tags": ["Temple", "Escort", "Tense"]
+      "secondary_rewards": [
+        "Telluria favour: warding charm"
+      ],
+      "tags": [
+        "Temple",
+        "Escort",
+        "Tense"
+      ]
     },
     {
       "id": 85,
@@ -1466,15 +2076,23 @@
       "settlement": "Standish",
       "quest_type": "Retrieval",
       "faction": "Clan Bacca",
-      "honour_required": { "clan": 2 },
+      "honour_required": {
+        "clan": 2
+      },
       "level_min": 11,
       "level_max": 13,
       "difficulty": "Severe",
       "reward_gp": 1300,
       "npc": "Standard-Bearer Lio Bacca",
       "description": "A clan standard vanished after a skirmish. Return it before rivals spread the story.",
-      "secondary_rewards": ["Bacca favour: 1 mark"],
-      "tags": ["Clan", "Honour", "Recovery"]
+      "secondary_rewards": [
+        "Bacca favour: 1 mark"
+      ],
+      "tags": [
+        "Clan",
+        "Honour",
+        "Recovery"
+      ]
     },
     {
       "id": 86,
@@ -1483,15 +2101,23 @@
       "settlement": "Redstone",
       "quest_type": "Retrieval",
       "faction": "Clan Farmer",
-      "honour_required": { "clan": 1 },
+      "honour_required": {
+        "clan": 1
+      },
       "level_min": 9,
       "level_max": 10,
       "difficulty": "Dangerous",
       "reward_gp": 820,
       "npc": "Captain Lysa Flint",
       "description": "A sun-oil cache was raided. Track thieves before the Temple blames civilians.",
-      "secondary_rewards": ["Farmer supply claim: 1 bundle"],
-      "tags": ["Clan", "Supplies", "Tension"]
+      "secondary_rewards": [
+        "Farmer supply claim: 1 bundle"
+      ],
+      "tags": [
+        "Clan",
+        "Supplies",
+        "Tension"
+      ]
     },
     {
       "id": 87,
@@ -1500,15 +2126,23 @@
       "settlement": "Moltenport",
       "quest_type": "Investigation",
       "faction": "Clan Molten",
-      "honour_required": { "clan": 1 },
+      "honour_required": {
+        "clan": 1
+      },
       "level_min": 9,
       "level_max": 10,
       "difficulty": "Dangerous",
       "reward_gp": 780,
       "npc": "Surveyor Nessa Molt",
       "description": "A surveyor vanished with bridge plans. Without them, trade halts in days.",
-      "secondary_rewards": ["Molten trade pass: 1 week"],
-      "tags": ["Clan", "Missing", "Infrastructure"]
+      "secondary_rewards": [
+        "Molten trade pass: 1 week"
+      ],
+      "tags": [
+        "Clan",
+        "Missing",
+        "Infrastructure"
+      ]
     },
     {
       "id": 88,
@@ -1517,15 +2151,23 @@
       "settlement": "Nightwood",
       "quest_type": "Intrigue",
       "faction": "Temple of Telluria",
-      "honour_required": { "temple": 2 },
+      "honour_required": {
+        "temple": 2
+      },
       "level_min": 11,
       "level_max": 13,
       "difficulty": "Severe",
       "reward_gp": 1150,
       "npc": "Priestess Alwen",
       "description": "Someone is forging temple summons to lure citizens. Find the hand behind the ink.",
-      "secondary_rewards": ["Telluria favour: sanctuary access"],
-      "tags": ["Temple", "Forgery", "City"]
+      "secondary_rewards": [
+        "Telluria favour: sanctuary access"
+      ],
+      "tags": [
+        "Temple",
+        "Forgery",
+        "City"
+      ]
     },
     {
       "id": 89,
@@ -1534,15 +2176,23 @@
       "settlement": "Stillport",
       "quest_type": "Exploration",
       "faction": "Clan Rowthorn",
-      "honour_required": { "clan": 1 },
+      "honour_required": {
+        "clan": 1
+      },
       "level_min": 9,
       "level_max": 10,
       "difficulty": "Dangerous",
       "reward_gp": 820,
       "npc": "Buoymaster Renn Roan",
       "description": "A guiding buoy is missing. Find it before a ship breaks on the reef.",
-      "secondary_rewards": ["Rowthorn safe-harbour token"],
-      "tags": ["Clan", "Sea", "Urgent"]
+      "secondary_rewards": [
+        "Rowthorn safe-harbour token"
+      ],
+      "tags": [
+        "Clan",
+        "Sea",
+        "Urgent"
+      ]
     },
     {
       "id": 90,
@@ -1558,10 +2208,15 @@
       "reward_gp": 1600,
       "npc": "Jax ‘Candle’ Mire",
       "description": "A stash of volatile contraband is set to sell tonight. Prevent the sale or steal it first.",
-      "secondary_rewards": ["Bolt Isle contact: 1 favour"],
-      "tags": ["Outlaws", "Heist", "Time"]
+      "secondary_rewards": [
+        "Bolt Isle contact: 1 favour"
+      ],
+      "tags": [
+        "Outlaws",
+        "Heist",
+        "Time"
+      ]
     },
-
     {
       "id": 91,
       "title": "Blackstone’s Coastal Reckoning",
@@ -1569,15 +2224,23 @@
       "settlement": "Timberport",
       "quest_type": "Diplomacy",
       "faction": "Clan Blackstone",
-      "honour_required": { "clan": 2 },
+      "honour_required": {
+        "clan": 2
+      },
       "level_min": 11,
       "level_max": 13,
       "difficulty": "Severe",
       "reward_gp": 1400,
       "npc": "Chief Boris Blackstone",
       "description": "A coastal captain threatens to defect. Bring him back to the table without threats.",
-      "secondary_rewards": ["Blackstone favour: 1 mark"],
-      "tags": ["Clan", "Port", "Diplomacy"]
+      "secondary_rewards": [
+        "Blackstone favour: 1 mark"
+      ],
+      "tags": [
+        "Clan",
+        "Port",
+        "Diplomacy"
+      ]
     },
     {
       "id": 92,
@@ -1586,15 +2249,23 @@
       "settlement": "Pearlsmore",
       "quest_type": "Investigation",
       "faction": "Temple of Telluria",
-      "honour_required": { "temple": 2 },
+      "honour_required": {
+        "temple": 2
+      },
       "level_min": 11,
       "level_max": 13,
       "difficulty": "Severe",
       "reward_gp": 1100,
       "npc": "Censor Lio Harth",
       "description": "A census is being altered. Find who is ‘removing’ names and where they went.",
-      "secondary_rewards": ["Telluria favour: sanctuary access"],
-      "tags": ["Temple", "Records", "Quiet"]
+      "secondary_rewards": [
+        "Telluria favour: sanctuary access"
+      ],
+      "tags": [
+        "Temple",
+        "Records",
+        "Quiet"
+      ]
     },
     {
       "id": 93,
@@ -1603,15 +2274,23 @@
       "settlement": "Westreach",
       "quest_type": "Retrieval",
       "faction": "Temple of Aurush",
-      "honour_required": { "temple": 3 },
+      "honour_required": {
+        "temple": 3
+      },
       "level_min": 14,
       "level_max": 16,
       "difficulty": "Critical",
       "reward_gp": 2600,
       "npc": "High Inquisitor Varos Hale",
       "description": "Recover a sealed item from a compromised vault. No witnesses. No delays.",
-      "secondary_rewards": ["Aurush favour: major rite access"],
-      "tags": ["Temple", "Vault", "Stealth"]
+      "secondary_rewards": [
+        "Aurush favour: major rite access"
+      ],
+      "tags": [
+        "Temple",
+        "Vault",
+        "Stealth"
+      ]
     },
     {
       "id": 94,
@@ -1620,15 +2299,23 @@
       "settlement": "Bretan",
       "quest_type": "Military",
       "faction": "Clan Slade",
-      "honour_required": { "clan": 2 },
+      "honour_required": {
+        "clan": 2
+      },
       "level_min": 11,
       "level_max": 13,
       "difficulty": "Severe",
       "reward_gp": 1500,
       "npc": "Marshal Veyne Slade",
       "description": "A hostile warband camps near the border. Disperse it without sparking open war.",
-      "secondary_rewards": ["Slade favour: 1 mark"],
-      "tags": ["Clan", "Border", "Delicate"]
+      "secondary_rewards": [
+        "Slade favour: 1 mark"
+      ],
+      "tags": [
+        "Clan",
+        "Border",
+        "Delicate"
+      ]
     },
     {
       "id": 95,
@@ -1637,15 +2324,23 @@
       "settlement": "Goldport",
       "quest_type": "Escort",
       "faction": "Clan Molten",
-      "honour_required": { "clan": 2 },
+      "honour_required": {
+        "clan": 2
+      },
       "level_min": 11,
       "level_max": 13,
       "difficulty": "Severe",
       "reward_gp": 1550,
       "npc": "Quartermaster Della Molt",
       "description": "Escort sunsteel ingots under seal. Thieves won’t strike twice. They’ll strike once, hard.",
-      "secondary_rewards": ["Molten trade pass: 1 month"],
-      "tags": ["Clan", "Trade", "Ambush"]
+      "secondary_rewards": [
+        "Molten trade pass: 1 month"
+      ],
+      "tags": [
+        "Clan",
+        "Trade",
+        "Ambush"
+      ]
     },
     {
       "id": 96,
@@ -1654,15 +2349,23 @@
       "settlement": "Icepoint",
       "quest_type": "Diplomacy",
       "faction": "Temple of Pelagos",
-      "honour_required": { "temple": 1 },
+      "honour_required": {
+        "temple": 1
+      },
       "level_min": 9,
       "level_max": 10,
       "difficulty": "Dangerous",
       "reward_gp": 780,
       "npc": "Wave-Priest Ralk Karr",
       "description": "A sea funeral was interrupted. Retrieve the lost token before crews refuse the water.",
-      "secondary_rewards": ["Pelagos favour: minor tide-blessing"],
-      "tags": ["Temple", "Rite", "Sea"]
+      "secondary_rewards": [
+        "Pelagos favour: minor tide-blessing"
+      ],
+      "tags": [
+        "Temple",
+        "Rite",
+        "Sea"
+      ]
     },
     {
       "id": 97,
@@ -1671,15 +2374,23 @@
       "settlement": "Stillport",
       "quest_type": "Diplomacy",
       "faction": "Clan Rowthorn",
-      "honour_required": { "clan": 2 },
+      "honour_required": {
+        "clan": 2
+      },
       "level_min": 11,
       "level_max": 13,
       "difficulty": "Severe",
       "reward_gp": 1400,
       "npc": "Chief Doran Rowthorn",
       "description": "A captain refuses Pelagos ruling after a reefing. Bring him to accept judgment peacefully.",
-      "secondary_rewards": ["Rowthorn safe-harbour token"],
-      "tags": ["Clan", "Law", "Sea"]
+      "secondary_rewards": [
+        "Rowthorn safe-harbour token"
+      ],
+      "tags": [
+        "Clan",
+        "Law",
+        "Sea"
+      ]
     },
     {
       "id": 98,
@@ -1695,8 +2406,14 @@
       "reward_gp": 3000,
       "npc": "Marla ‘Noose’ Renn",
       "description": "A notorious fence is selling names, not goods. Stop the sale or buy it first.",
-      "secondary_rewards": ["Bolt Isle contact: permanent if spared"],
-      "tags": ["Outlaws", "Auction", "Secrets"]
+      "secondary_rewards": [
+        "Bolt Isle contact: permanent if spared"
+      ],
+      "tags": [
+        "Outlaws",
+        "Auction",
+        "Secrets"
+      ]
     },
     {
       "id": 99,
@@ -1705,15 +2422,23 @@
       "settlement": "Middlemount",
       "quest_type": "Military",
       "faction": "Temple of Telluria",
-      "honour_required": { "temple": 3 },
+      "honour_required": {
+        "temple": 3
+      },
       "level_min": 14,
       "level_max": 16,
       "difficulty": "Critical",
       "reward_gp": 2400,
       "npc": "High Priestess Merin Oathstone",
       "description": "Protect a high-ritual from interference. Your role is defense and restraint.",
-      "secondary_rewards": ["Telluria favour: major warding"],
-      "tags": ["Temple", "Ritual", "Defense"]
+      "secondary_rewards": [
+        "Telluria favour: major warding"
+      ],
+      "tags": [
+        "Temple",
+        "Ritual",
+        "Defense"
+      ]
     },
     {
       "id": 100,
@@ -1722,15 +2447,2343 @@
       "settlement": "Nightwood",
       "quest_type": "Escort",
       "faction": "Clan Blackstone",
-      "honour_required": { "clan": 3 },
+      "honour_required": {
+        "clan": 3
+      },
       "level_min": 14,
       "level_max": 16,
       "difficulty": "Critical",
       "reward_gp": 2600,
       "npc": "Chief Boris Blackstone",
       "description": "Escort a key witness to a closed hearing. If they vanish, the city’s power shifts overnight.",
-      "secondary_rewards": ["Blackstone favour: province leverage"],
-      "tags": ["Clan", "Court", "High-Stakes"]
+      "secondary_rewards": [
+        "Blackstone favour: province leverage"
+      ],
+      "tags": [
+        "Clan",
+        "Court",
+        "High-Stakes"
+      ]
+    },
+    {
+      "id": 101,
+      "title": "Oslan Wyst",
+      "province": "Western Province",
+      "settlement": "West Beacon",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Moderate",
+      "reward_gp": 750,
+      "npc": "Harbour-Captain Isembard Kade",
+      "description": "Wanted for blackmail and bribery. Last seen at the abandoned kiln-houses. Alive preferred. Bring proof (a signet ring) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Outlaw"
+      ],
+      "bounty": {
+        "target": "Oslan Wyst",
+        "status": "Alive preferred",
+        "crime": "blackmail and bribery",
+        "last_seen": "at the abandoned kiln-houses",
+        "proof": "a signet ring"
+      }
+    },
+    {
+      "id": 102,
+      "title": "Otho Mire",
+      "province": "Western Province",
+      "settlement": "Bray’s Beacon",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Moderate",
+      "reward_gp": 550,
+      "npc": "Road Marshal Renn Wyst",
+      "description": "Wanted for poisoning wells. Last seen beneath the fallen beacon. Alive preferred. Bring proof (the creature’s jawbone) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Outlaw"
+      ],
+      "bounty": {
+        "target": "Otho Mire",
+        "status": "Alive preferred",
+        "crime": "poisoning wells",
+        "last_seen": "beneath the fallen beacon",
+        "proof": "the creature’s jawbone"
+      }
+    },
+    {
+      "id": 103,
+      "title": "Frostwarg Alpha",
+      "province": "Western Province",
+      "settlement": "Westreach",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Moderate",
+      "reward_gp": 550,
+      "npc": "Dockmaster Alwen Molt",
+      "description": "Wanted for armed extortion. Last seen at the abandoned kiln-houses. Dead or Alive. Bring proof (a severed horn) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Monster"
+      ],
+      "bounty": {
+        "target": "Frostwarg Alpha",
+        "status": "Dead or Alive",
+        "crime": "armed extortion",
+        "last_seen": "at the abandoned kiln-houses",
+        "proof": "a severed horn"
+      }
+    },
+    {
+      "id": 104,
+      "title": "Maerys Sorn",
+      "province": "Western Province",
+      "settlement": "Westreach",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Dangerous",
+      "reward_gp": 1200,
+      "npc": "Harbour-Captain Rell Kade",
+      "description": "Wanted for raiding coastal skiffs. Last seen along the coastal cliffs. Alive only. Bring proof (the leader’s ledger) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Outlaw"
+      ],
+      "bounty": {
+        "target": "Maerys Sorn",
+        "status": "Alive only",
+        "crime": "raiding coastal skiffs",
+        "last_seen": "along the coastal cliffs",
+        "proof": "the leader’s ledger"
+      }
+    },
+    {
+      "id": 105,
+      "title": "Rootbound Husk",
+      "province": "Western Province",
+      "settlement": "Eastlook",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Dangerous",
+      "reward_gp": 1000,
+      "npc": "Harbour-Captain Runa Molt",
+      "description": "Wanted for counterfeit seals. Last seen along the coastal cliffs. Alive only. Bring proof (a unique tattoo sketch) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Monster"
+      ],
+      "bounty": {
+        "target": "Rootbound Husk",
+        "status": "Alive only",
+        "crime": "counterfeit seals",
+        "last_seen": "along the coastal cliffs",
+        "proof": "a unique tattoo sketch"
+      }
+    },
+    {
+      "id": 106,
+      "title": "Caldus Dorne",
+      "province": "Western Province",
+      "settlement": "Westreach",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Moderate",
+      "reward_gp": 600,
+      "npc": "Harbour-Captain Corvin Kline",
+      "description": "Wanted for grave-robbery. Last seen in the night market alleys. Dead or Alive. Bring proof (a unique tattoo sketch) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Outlaw"
+      ],
+      "bounty": {
+        "target": "Caldus Dorne",
+        "status": "Dead or Alive",
+        "crime": "grave-robbery",
+        "last_seen": "in the night market alleys",
+        "proof": "a unique tattoo sketch"
+      }
+    },
+    {
+      "id": 107,
+      "title": "Ironhorn Buckbear",
+      "province": "Western Province",
+      "settlement": "Highwater",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Moderate",
+      "reward_gp": 600,
+      "npc": "Warden-Lieutenant Runa Sorn",
+      "description": "Wanted for kidnapping for coin. Last seen at the abandoned kiln-houses. Alive preferred. Bring proof (the creature’s jawbone) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Monster"
+      ],
+      "bounty": {
+        "target": "Ironhorn Buckbear",
+        "status": "Alive preferred",
+        "crime": "kidnapping for coin",
+        "last_seen": "at the abandoned kiln-houses",
+        "proof": "the creature’s jawbone"
+      }
+    },
+    {
+      "id": 108,
+      "title": "Nightglass Stalker",
+      "province": "Western Province",
+      "settlement": "Eastlook",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Severe",
+      "reward_gp": 1450,
+      "npc": "Dockmaster Nessa Ryner",
+      "description": "Wanted for poisoning wells. Last seen in the night market alleys. Alive preferred. Bring proof (the creature’s jawbone) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Monster"
+      ],
+      "bounty": {
+        "target": "Nightglass Stalker",
+        "status": "Alive preferred",
+        "crime": "poisoning wells",
+        "last_seen": "in the night market alleys",
+        "proof": "the creature’s jawbone"
+      }
+    },
+    {
+      "id": 109,
+      "title": "Ironhorn Buckbear",
+      "province": "Western Province",
+      "settlement": "Eastlook",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Moderate",
+      "reward_gp": 700,
+      "npc": "Watch Sergeant Ralk Dorne",
+      "description": "Wanted for grave-robbery. Last seen in the night market alleys. Alive preferred. Bring proof (a unique tattoo sketch) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Monster"
+      ],
+      "bounty": {
+        "target": "Ironhorn Buckbear",
+        "status": "Alive preferred",
+        "crime": "grave-robbery",
+        "last_seen": "in the night market alleys",
+        "proof": "a unique tattoo sketch"
+      }
+    },
+    {
+      "id": 110,
+      "title": "Nyra Hale",
+      "province": "Western Province",
+      "settlement": "Westreach",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Dangerous",
+      "reward_gp": 1100,
+      "npc": "Harbour-Captain Rell Ryner",
+      "description": "Wanted for blackmail and bribery. Last seen on the ice-pass. Alive only. Bring proof (the creature’s jawbone) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Outlaw"
+      ],
+      "bounty": {
+        "target": "Nyra Hale",
+        "status": "Alive only",
+        "crime": "blackmail and bribery",
+        "last_seen": "on the ice-pass",
+        "proof": "the creature’s jawbone"
+      }
+    },
+    {
+      "id": 111,
+      "title": "Nyra Kern",
+      "province": "Eastern Province",
+      "settlement": "Bretan",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Severe",
+      "reward_gp": 1400,
+      "npc": "Clan Deputy Nyra Brack",
+      "description": "Wanted for counterfeit seals. Last seen in the night market alleys. Alive preferred. Bring proof (a unique tattoo sketch) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Outlaw"
+      ],
+      "bounty": {
+        "target": "Nyra Kern",
+        "status": "Alive preferred",
+        "crime": "counterfeit seals",
+        "last_seen": "in the night market alleys",
+        "proof": "a unique tattoo sketch"
+      }
+    },
+    {
+      "id": 112,
+      "title": "Fen-Scream Wyvernling",
+      "province": "Eastern Province",
+      "settlement": "Steelport",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Dangerous",
+      "reward_gp": 850,
+      "npc": "Temple Bailiff Otho Mire",
+      "description": "Wanted for grave-robbery. Last seen in the night market alleys. Alive preferred. Bring proof (the leader’s ledger) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Monster"
+      ],
+      "bounty": {
+        "target": "Fen-Scream Wyvernling",
+        "status": "Alive preferred",
+        "crime": "grave-robbery",
+        "last_seen": "in the night market alleys",
+        "proof": "the leader’s ledger"
+      }
+    },
+    {
+      "id": 113,
+      "title": "Nessa Vale",
+      "province": "Eastern Province",
+      "settlement": "Bretan",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Moderate",
+      "reward_gp": 600,
+      "npc": "Temple Bailiff Selka Sorn",
+      "description": "Wanted for grave-robbery. Last seen beneath the fallen beacon. Alive preferred. Bring proof (a severed horn) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Outlaw"
+      ],
+      "bounty": {
+        "target": "Nessa Vale",
+        "status": "Alive preferred",
+        "crime": "grave-robbery",
+        "last_seen": "beneath the fallen beacon",
+        "proof": "a severed horn"
+      }
+    },
+    {
+      "id": 114,
+      "title": "Ironhorn Buckbear",
+      "province": "Eastern Province",
+      "settlement": "Windmere",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Dangerous",
+      "reward_gp": 900,
+      "npc": "Coin Inspector Corvin Greave",
+      "description": "Wanted for raiding coastal skiffs. Last seen beneath the fallen beacon. Alive preferred. Bring proof (a branded token) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Monster"
+      ],
+      "bounty": {
+        "target": "Ironhorn Buckbear",
+        "status": "Alive preferred",
+        "crime": "raiding coastal skiffs",
+        "last_seen": "beneath the fallen beacon",
+        "proof": "a branded token"
+      }
+    },
+    {
+      "id": 115,
+      "title": "Frostwarg Alpha",
+      "province": "Eastern Province",
+      "settlement": "Moorcastle",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Critical",
+      "reward_gp": 1850,
+      "npc": "Coin Inspector Brann Oathstone",
+      "description": "Wanted for armed extortion. Last seen by the northern watchpost. Alive preferred. Bring proof (a marked dagger) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Monster"
+      ],
+      "bounty": {
+        "target": "Frostwarg Alpha",
+        "status": "Alive preferred",
+        "crime": "armed extortion",
+        "last_seen": "by the northern watchpost",
+        "proof": "a marked dagger"
+      }
+    },
+    {
+      "id": 116,
+      "title": "Runa Renn",
+      "province": "Eastern Province",
+      "settlement": "Stonefield",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Moderate",
+      "reward_gp": 500,
+      "npc": "Warden-Lieutenant Runa Kade",
+      "description": "Wanted for murder on the road. Last seen within the reed-choked shallows. Alive only. Bring proof (a severed horn) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Outlaw"
+      ],
+      "bounty": {
+        "target": "Runa Renn",
+        "status": "Alive only",
+        "crime": "murder on the road",
+        "last_seen": "within the reed-choked shallows",
+        "proof": "a severed horn"
+      }
+    },
+    {
+      "id": 117,
+      "title": "Nessa Roan",
+      "province": "Eastern Province",
+      "settlement": "Moorcastle",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Dangerous",
+      "reward_gp": 1150,
+      "npc": "Dockmaster Ysolde Sunfall",
+      "description": "Wanted for grave-robbery. Last seen at the old stone bridge. Alive only. Bring proof (a severed horn) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Outlaw"
+      ],
+      "bounty": {
+        "target": "Nessa Roan",
+        "status": "Alive only",
+        "crime": "grave-robbery",
+        "last_seen": "at the old stone bridge",
+        "proof": "a severed horn"
+      }
+    },
+    {
+      "id": 118,
+      "title": "Renn Oathstone",
+      "province": "Eastern Province",
+      "settlement": "Veldmere",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Severe",
+      "reward_gp": 1200,
+      "npc": "Harbour-Captain Sera Ryner",
+      "description": "Wanted for kidnapping for coin. Last seen at the old stone bridge. Alive preferred. Bring proof (a marked dagger) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Outlaw"
+      ],
+      "bounty": {
+        "target": "Renn Oathstone",
+        "status": "Alive preferred",
+        "crime": "kidnapping for coin",
+        "last_seen": "at the old stone bridge",
+        "proof": "a marked dagger"
+      }
+    },
+    {
+      "id": 119,
+      "title": "Jax Sunfall",
+      "province": "Eastern Province",
+      "settlement": "Moorcastle",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Moderate",
+      "reward_gp": 650,
+      "npc": "Dockmaster Dain Oathstone",
+      "description": "Wanted for raiding coastal skiffs. Last seen at the old stone bridge. Alive only. Bring proof (a signet ring) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Outlaw"
+      ],
+      "bounty": {
+        "target": "Jax Sunfall",
+        "status": "Alive only",
+        "crime": "raiding coastal skiffs",
+        "last_seen": "at the old stone bridge",
+        "proof": "a signet ring"
+      }
+    },
+    {
+      "id": 120,
+      "title": "Ashbite Drakespawn",
+      "province": "Eastern Province",
+      "settlement": "Bretan",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Moderate",
+      "reward_gp": 650,
+      "npc": "Coin Inspector Kael Ryner",
+      "description": "Wanted for murder on the road. Last seen in the night market alleys. Alive preferred. Bring proof (a branded token) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Monster"
+      ],
+      "bounty": {
+        "target": "Ashbite Drakespawn",
+        "status": "Alive preferred",
+        "crime": "murder on the road",
+        "last_seen": "in the night market alleys",
+        "proof": "a branded token"
+      }
+    },
+    {
+      "id": 121,
+      "title": "Varek Brack",
+      "province": "Midland Province",
+      "settlement": "Pearlsmore",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Moderate",
+      "reward_gp": 750,
+      "npc": "Road Marshal Nessa Hale",
+      "description": "Wanted for grave-robbery. Last seen along the coastal cliffs. Alive preferred. Bring proof (a marked dagger) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Outlaw"
+      ],
+      "bounty": {
+        "target": "Varek Brack",
+        "status": "Alive preferred",
+        "crime": "grave-robbery",
+        "last_seen": "along the coastal cliffs",
+        "proof": "a marked dagger"
+      }
+    },
+    {
+      "id": 122,
+      "title": "Rootbound Husk",
+      "province": "Midland Province",
+      "settlement": "Standish",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Dangerous",
+      "reward_gp": 800,
+      "npc": "Warden-Lieutenant Ysolde Marr",
+      "description": "Wanted for raiding coastal skiffs. Last seen in the night market alleys. Alive only. Bring proof (a signet ring) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Monster"
+      ],
+      "bounty": {
+        "target": "Rootbound Husk",
+        "status": "Alive only",
+        "crime": "raiding coastal skiffs",
+        "last_seen": "in the night market alleys",
+        "proof": "a signet ring"
+      }
+    },
+    {
+      "id": 123,
+      "title": "Veinwarped Mawclaw",
+      "province": "Midland Province",
+      "settlement": "Colver",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Dangerous",
+      "reward_gp": 950,
+      "npc": "Watch Sergeant Nyra Renn",
+      "description": "Wanted for grave-robbery. Last seen beneath the fallen beacon. Alive only. Bring proof (a signet ring) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Monster"
+      ],
+      "bounty": {
+        "target": "Veinwarped Mawclaw",
+        "status": "Alive only",
+        "crime": "grave-robbery",
+        "last_seen": "beneath the fallen beacon",
+        "proof": "a signet ring"
+      }
+    },
+    {
+      "id": 124,
+      "title": "Brann Holt",
+      "province": "Midland Province",
+      "settlement": "Colver",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Severe",
+      "reward_gp": 1350,
+      "npc": "Clan Deputy Selka Greave",
+      "description": "Wanted for counterfeit seals. Last seen in the night market alleys. Dead or Alive. Bring proof (the creature’s jawbone) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Outlaw"
+      ],
+      "bounty": {
+        "target": "Brann Holt",
+        "status": "Dead or Alive",
+        "crime": "counterfeit seals",
+        "last_seen": "in the night market alleys",
+        "proof": "the creature’s jawbone"
+      }
+    },
+    {
+      "id": 125,
+      "title": "Veinwarped Mawclaw",
+      "province": "Midland Province",
+      "settlement": "Middlemount",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Moderate",
+      "reward_gp": 700,
+      "npc": "Harbour-Captain Dain Kline",
+      "description": "Wanted for grave-robbery. Last seen among the reef-snarls. Alive preferred. Bring proof (the creature’s jawbone) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Monster"
+      ],
+      "bounty": {
+        "target": "Veinwarped Mawclaw",
+        "status": "Alive preferred",
+        "crime": "grave-robbery",
+        "last_seen": "among the reef-snarls",
+        "proof": "the creature’s jawbone"
+      }
+    },
+    {
+      "id": 126,
+      "title": "Ashbite Drakespawn",
+      "province": "Midland Province",
+      "settlement": "Middlemount",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Moderate",
+      "reward_gp": 550,
+      "npc": "Coin Inspector Isembard Flint",
+      "description": "Wanted for smuggling rite-goods. Last seen beneath the fallen beacon. Alive only. Bring proof (a signet ring) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Monster"
+      ],
+      "bounty": {
+        "target": "Ashbite Drakespawn",
+        "status": "Alive only",
+        "crime": "smuggling rite-goods",
+        "last_seen": "beneath the fallen beacon",
+        "proof": "a signet ring"
+      }
+    },
+    {
+      "id": 127,
+      "title": "Oren Hale",
+      "province": "Midland Province",
+      "settlement": "Standish",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Moderate",
+      "reward_gp": 500,
+      "npc": "Road Marshal Lysa Greave",
+      "description": "Wanted for smuggling rite-goods. Last seen beneath the fallen beacon. Alive only. Bring proof (a marked dagger) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Outlaw"
+      ],
+      "bounty": {
+        "target": "Oren Hale",
+        "status": "Alive only",
+        "crime": "smuggling rite-goods",
+        "last_seen": "beneath the fallen beacon",
+        "proof": "a marked dagger"
+      }
+    },
+    {
+      "id": 128,
+      "title": "Maerys Marr",
+      "province": "Midland Province",
+      "settlement": "Middlemount",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Dangerous",
+      "reward_gp": 800,
+      "npc": "Harbour-Captain Kelm Greave",
+      "description": "Wanted for murder on the road. Last seen near the marsh edge. Alive preferred. Bring proof (the leader’s ledger) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Outlaw"
+      ],
+      "bounty": {
+        "target": "Maerys Marr",
+        "status": "Alive preferred",
+        "crime": "murder on the road",
+        "last_seen": "near the marsh edge",
+        "proof": "the leader’s ledger"
+      }
+    },
+    {
+      "id": 129,
+      "title": "Marla Kline",
+      "province": "Midland Province",
+      "settlement": "Middlemount",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Dangerous",
+      "reward_gp": 1200,
+      "npc": "Warden-Lieutenant Nyra Kade",
+      "description": "Wanted for arson of storehouses. Last seen among the reef-snarls. Dead or Alive. Bring proof (a signet ring) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Outlaw"
+      ],
+      "bounty": {
+        "target": "Marla Kline",
+        "status": "Dead or Alive",
+        "crime": "arson of storehouses",
+        "last_seen": "among the reef-snarls",
+        "proof": "a signet ring"
+      }
+    },
+    {
+      "id": 130,
+      "title": "Kelm Hale",
+      "province": "Midland Province",
+      "settlement": "Standish",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Moderate",
+      "reward_gp": 600,
+      "npc": "Warden-Lieutenant Veyra Roan",
+      "description": "Wanted for grave-robbery. Last seen at the old stone bridge. Alive only. Bring proof (the leader’s ledger) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Outlaw"
+      ],
+      "bounty": {
+        "target": "Kelm Hale",
+        "status": "Alive only",
+        "crime": "grave-robbery",
+        "last_seen": "at the old stone bridge",
+        "proof": "the leader’s ledger"
+      }
+    },
+    {
+      "id": 131,
+      "title": "Fen-Scream Wyvernling",
+      "province": "Northern Province",
+      "settlement": "North Watchpost",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Severe",
+      "reward_gp": 1350,
+      "npc": "Reeve Tilda Sunfall",
+      "description": "Wanted for murder on the road. Last seen in the night market alleys. Dead or Alive. Bring proof (the leader’s ledger) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Monster"
+      ],
+      "bounty": {
+        "target": "Fen-Scream Wyvernling",
+        "status": "Dead or Alive",
+        "crime": "murder on the road",
+        "last_seen": "in the night market alleys",
+        "proof": "the leader’s ledger"
+      }
+    },
+    {
+      "id": 132,
+      "title": "Ashbite Drakespawn",
+      "province": "Northern Province",
+      "settlement": "Timberport",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Moderate",
+      "reward_gp": 800,
+      "npc": "Harbour-Captain Rell Sorn",
+      "description": "Wanted for poisoning wells. Last seen by the northern watchpost. Dead or Alive. Bring proof (a marked dagger) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Monster"
+      ],
+      "bounty": {
+        "target": "Ashbite Drakespawn",
+        "status": "Dead or Alive",
+        "crime": "poisoning wells",
+        "last_seen": "by the northern watchpost",
+        "proof": "a marked dagger"
+      }
+    },
+    {
+      "id": 133,
+      "title": "Runa Wyst",
+      "province": "Northern Province",
+      "settlement": "Nightwood",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Moderate",
+      "reward_gp": 550,
+      "npc": "Watch Sergeant Alwen Greave",
+      "description": "Wanted for armed extortion. Last seen along the coastal cliffs. Alive only. Bring proof (the leader’s ledger) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Outlaw"
+      ],
+      "bounty": {
+        "target": "Runa Wyst",
+        "status": "Alive only",
+        "crime": "armed extortion",
+        "last_seen": "along the coastal cliffs",
+        "proof": "the leader’s ledger"
+      }
+    },
+    {
+      "id": 134,
+      "title": "Isembard Holt",
+      "province": "Northern Province",
+      "settlement": "Sodden",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Severe",
+      "reward_gp": 1250,
+      "npc": "Temple Bailiff Tilda Renn",
+      "description": "Wanted for smuggling rite-goods. Last seen near the marsh edge. Alive only. Bring proof (a severed horn) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Outlaw"
+      ],
+      "bounty": {
+        "target": "Isembard Holt",
+        "status": "Alive only",
+        "crime": "smuggling rite-goods",
+        "last_seen": "near the marsh edge",
+        "proof": "a severed horn"
+      }
+    },
+    {
+      "id": 135,
+      "title": "Perrin Sunfall",
+      "province": "Northern Province",
+      "settlement": "North Watchpost",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Dangerous",
+      "reward_gp": 1200,
+      "npc": "Harbour-Captain Rell Renn",
+      "description": "Wanted for grave-robbery. Last seen along the coastal cliffs. Alive only. Bring proof (a signet ring) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Outlaw"
+      ],
+      "bounty": {
+        "target": "Perrin Sunfall",
+        "status": "Alive only",
+        "crime": "grave-robbery",
+        "last_seen": "along the coastal cliffs",
+        "proof": "a signet ring"
+      }
+    },
+    {
+      "id": 136,
+      "title": "Isembard Kern",
+      "province": "Northern Province",
+      "settlement": "North Watchpost",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Dangerous",
+      "reward_gp": 950,
+      "npc": "Clan Deputy Kelm Kade",
+      "description": "Wanted for kidnapping for coin. Last seen beneath the fallen beacon. Alive only. Bring proof (the leader’s ledger) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Outlaw"
+      ],
+      "bounty": {
+        "target": "Isembard Kern",
+        "status": "Alive only",
+        "crime": "kidnapping for coin",
+        "last_seen": "beneath the fallen beacon",
+        "proof": "the leader’s ledger"
+      }
+    },
+    {
+      "id": 137,
+      "title": "Reef-Stalker",
+      "province": "Northern Province",
+      "settlement": "Bleakhold",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Dangerous",
+      "reward_gp": 1100,
+      "npc": "Clan Deputy Ralk Flint",
+      "description": "Wanted for smuggling rite-goods. Last seen among the reef-snarls. Alive preferred. Bring proof (the wanted poster stamp) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Monster"
+      ],
+      "bounty": {
+        "target": "Reef-Stalker",
+        "status": "Alive preferred",
+        "crime": "smuggling rite-goods",
+        "last_seen": "among the reef-snarls",
+        "proof": "the wanted poster stamp"
+      }
+    },
+    {
+      "id": 138,
+      "title": "Rell Kern",
+      "province": "Northern Province",
+      "settlement": "North Watchpost",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Dangerous",
+      "reward_gp": 900,
+      "npc": "Temple Bailiff Ralk Kline",
+      "description": "Wanted for murder on the road. Last seen along the coastal cliffs. Alive preferred. Bring proof (the creature’s jawbone) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Outlaw"
+      ],
+      "bounty": {
+        "target": "Rell Kern",
+        "status": "Alive preferred",
+        "crime": "murder on the road",
+        "last_seen": "along the coastal cliffs",
+        "proof": "the creature’s jawbone"
+      }
+    },
+    {
+      "id": 139,
+      "title": "Nightglass Stalker",
+      "province": "Northern Province",
+      "settlement": "North Watchpost",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Dangerous",
+      "reward_gp": 1150,
+      "npc": "Coin Inspector Marla Kern",
+      "description": "Wanted for grave-robbery. Last seen among the reef-snarls. Alive only. Bring proof (a unique tattoo sketch) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Monster"
+      ],
+      "bounty": {
+        "target": "Nightglass Stalker",
+        "status": "Alive only",
+        "crime": "grave-robbery",
+        "last_seen": "among the reef-snarls",
+        "proof": "a unique tattoo sketch"
+      }
+    },
+    {
+      "id": 140,
+      "title": "Varos Marr",
+      "province": "Northern Province",
+      "settlement": "Coldharrow",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Dangerous",
+      "reward_gp": 1050,
+      "npc": "Harbour-Captain Selka Kern",
+      "description": "Wanted for smuggling rite-goods. Last seen by the northern watchpost. Alive preferred. Bring proof (a marked dagger) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Outlaw"
+      ],
+      "bounty": {
+        "target": "Varos Marr",
+        "status": "Alive preferred",
+        "crime": "smuggling rite-goods",
+        "last_seen": "by the northern watchpost",
+        "proof": "a marked dagger"
+      }
+    },
+    {
+      "id": 141,
+      "title": "Ysolde Mire",
+      "province": "Southern Province",
+      "settlement": "Blackwatch",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Severe",
+      "reward_gp": 1250,
+      "npc": "Coin Inspector Renn Vannis",
+      "description": "Wanted for blackmail and bribery. Last seen by the northern watchpost. Dead or Alive. Bring proof (a branded token) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Outlaw"
+      ],
+      "bounty": {
+        "target": "Ysolde Mire",
+        "status": "Dead or Alive",
+        "crime": "blackmail and bribery",
+        "last_seen": "by the northern watchpost",
+        "proof": "a branded token"
+      }
+    },
+    {
+      "id": 142,
+      "title": "Rook Sile",
+      "province": "Southern Province",
+      "settlement": "Luca's Tower",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Severe",
+      "reward_gp": 1250,
+      "npc": "Watch Sergeant Runa Vane",
+      "description": "Wanted for raiding coastal skiffs. Last seen on the ice-pass. Alive only. Bring proof (a signet ring) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Outlaw"
+      ],
+      "bounty": {
+        "target": "Rook Sile",
+        "status": "Alive only",
+        "crime": "raiding coastal skiffs",
+        "last_seen": "on the ice-pass",
+        "proof": "a signet ring"
+      }
+    },
+    {
+      "id": 143,
+      "title": "Veinwarped Mawclaw",
+      "province": "Southern Province",
+      "settlement": "Fork Farm",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Dangerous",
+      "reward_gp": 1150,
+      "npc": "Road Marshal Perrin Sile",
+      "description": "Wanted for poisoning wells. Last seen beneath the fallen beacon. Alive only. Bring proof (a branded token) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Monster"
+      ],
+      "bounty": {
+        "target": "Veinwarped Mawclaw",
+        "status": "Alive only",
+        "crime": "poisoning wells",
+        "last_seen": "beneath the fallen beacon",
+        "proof": "a branded token"
+      }
+    },
+    {
+      "id": 144,
+      "title": "Bog-Titan Leech",
+      "province": "Southern Province",
+      "settlement": "Moltenport",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Dangerous",
+      "reward_gp": 950,
+      "npc": "Temple Bailiff Brann Stonewise",
+      "description": "Wanted for grave-robbery. Last seen along the coastal cliffs. Alive preferred. Bring proof (a unique tattoo sketch) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Monster"
+      ],
+      "bounty": {
+        "target": "Bog-Titan Leech",
+        "status": "Alive preferred",
+        "crime": "grave-robbery",
+        "last_seen": "along the coastal cliffs",
+        "proof": "a unique tattoo sketch"
+      }
+    },
+    {
+      "id": 145,
+      "title": "Alwen Holt",
+      "province": "Southern Province",
+      "settlement": "Goldport",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Severe",
+      "reward_gp": 1250,
+      "npc": "Reeve Lysa Wyst",
+      "description": "Wanted for counterfeit seals. Last seen in the night market alleys. Alive preferred. Bring proof (a marked dagger) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Outlaw"
+      ],
+      "bounty": {
+        "target": "Alwen Holt",
+        "status": "Alive preferred",
+        "crime": "counterfeit seals",
+        "last_seen": "in the night market alleys",
+        "proof": "a marked dagger"
+      }
+    },
+    {
+      "id": 146,
+      "title": "Isembard Oathstone",
+      "province": "Southern Province",
+      "settlement": "Luca's Tower",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Moderate",
+      "reward_gp": 550,
+      "npc": "Watch Sergeant Rell Sile",
+      "description": "Wanted for blackmail and bribery. Last seen near the marsh edge. Dead or Alive. Bring proof (a branded token) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Outlaw"
+      ],
+      "bounty": {
+        "target": "Isembard Oathstone",
+        "status": "Dead or Alive",
+        "crime": "blackmail and bribery",
+        "last_seen": "near the marsh edge",
+        "proof": "a branded token"
+      }
+    },
+    {
+      "id": 147,
+      "title": "Reef-Stalker",
+      "province": "Southern Province",
+      "settlement": "Blackwatch",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Dangerous",
+      "reward_gp": 1100,
+      "npc": "Road Marshal Isembard Mire",
+      "description": "Wanted for grave-robbery. Last seen on the ice-pass. Dead or Alive. Bring proof (a marked dagger) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Monster"
+      ],
+      "bounty": {
+        "target": "Reef-Stalker",
+        "status": "Dead or Alive",
+        "crime": "grave-robbery",
+        "last_seen": "on the ice-pass",
+        "proof": "a marked dagger"
+      }
+    },
+    {
+      "id": 148,
+      "title": "Rell Holt",
+      "province": "Southern Province",
+      "settlement": "Luca's Tower",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Dangerous",
+      "reward_gp": 1100,
+      "npc": "Reeve Varek Hale",
+      "description": "Wanted for blackmail and bribery. Last seen among the reef-snarls. Dead or Alive. Bring proof (a signet ring) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Outlaw"
+      ],
+      "bounty": {
+        "target": "Rell Holt",
+        "status": "Dead or Alive",
+        "crime": "blackmail and bribery",
+        "last_seen": "among the reef-snarls",
+        "proof": "a signet ring"
+      }
+    },
+    {
+      "id": 149,
+      "title": "Mara Kade",
+      "province": "Southern Province",
+      "settlement": "The City of Coin",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Dangerous",
+      "reward_gp": 900,
+      "npc": "Coin Inspector Tilda Sorn",
+      "description": "Wanted for smuggling rite-goods. Last seen at the abandoned kiln-houses. Alive preferred. Bring proof (the leader’s ledger) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Outlaw"
+      ],
+      "bounty": {
+        "target": "Mara Kade",
+        "status": "Alive preferred",
+        "crime": "smuggling rite-goods",
+        "last_seen": "at the abandoned kiln-houses",
+        "proof": "the leader’s ledger"
+      }
+    },
+    {
+      "id": 150,
+      "title": "Rell Greave",
+      "province": "Southern Province",
+      "settlement": "Moltenport",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Dangerous",
+      "reward_gp": 1100,
+      "npc": "Temple Bailiff Vessa Stonewise",
+      "description": "Wanted for murder on the road. Last seen among the reef-snarls. Dead or Alive. Bring proof (a signet ring) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Outlaw"
+      ],
+      "bounty": {
+        "target": "Rell Greave",
+        "status": "Dead or Alive",
+        "crime": "murder on the road",
+        "last_seen": "among the reef-snarls",
+        "proof": "a signet ring"
+      }
+    },
+    {
+      "id": 151,
+      "title": "Elric Sile",
+      "province": "The North Isle",
+      "settlement": "Bleakhold",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Moderate",
+      "reward_gp": 550,
+      "npc": "Dockmaster Mara Mire",
+      "description": "Wanted for arson of storehouses. Last seen by the northern watchpost. Dead or Alive. Bring proof (the wanted poster stamp) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Outlaw"
+      ],
+      "bounty": {
+        "target": "Elric Sile",
+        "status": "Dead or Alive",
+        "crime": "arson of storehouses",
+        "last_seen": "by the northern watchpost",
+        "proof": "the wanted poster stamp"
+      }
+    },
+    {
+      "id": 152,
+      "title": "Kael Oathstone",
+      "province": "The North Isle",
+      "settlement": "Bleakhold",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Dangerous",
+      "reward_gp": 1050,
+      "npc": "Reeve Nyra Sile",
+      "description": "Wanted for arson of storehouses. Last seen along the coastal cliffs. Alive only. Bring proof (a severed horn) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Outlaw"
+      ],
+      "bounty": {
+        "target": "Kael Oathstone",
+        "status": "Alive only",
+        "crime": "arson of storehouses",
+        "last_seen": "along the coastal cliffs",
+        "proof": "a severed horn"
+      }
+    },
+    {
+      "id": 153,
+      "title": "Nightglass Stalker",
+      "province": "The North Isle",
+      "settlement": "Bleakhold",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Dangerous",
+      "reward_gp": 1100,
+      "npc": "Watch Sergeant Bram Kade",
+      "description": "Wanted for blackmail and bribery. Last seen by the northern watchpost. Alive only. Bring proof (a severed horn) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Monster"
+      ],
+      "bounty": {
+        "target": "Nightglass Stalker",
+        "status": "Alive only",
+        "crime": "blackmail and bribery",
+        "last_seen": "by the northern watchpost",
+        "proof": "a severed horn"
+      }
+    },
+    {
+      "id": 154,
+      "title": "Nightglass Stalker",
+      "province": "The North Isle",
+      "settlement": "Icepoint",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Severe",
+      "reward_gp": 1200,
+      "npc": "Clan Deputy Isembard Sunfall",
+      "description": "Wanted for kidnapping for coin. Last seen at the old stone bridge. Alive preferred. Bring proof (the leader’s ledger) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Monster"
+      ],
+      "bounty": {
+        "target": "Nightglass Stalker",
+        "status": "Alive preferred",
+        "crime": "kidnapping for coin",
+        "last_seen": "at the old stone bridge",
+        "proof": "the leader’s ledger"
+      }
+    },
+    {
+      "id": 155,
+      "title": "Veinwarped Mawclaw",
+      "province": "The North Isle",
+      "settlement": "Icepoint",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Moderate",
+      "reward_gp": 600,
+      "npc": "Coin Inspector Lysa Sunfall",
+      "description": "Wanted for arson of storehouses. Last seen among the reef-snarls. Alive only. Bring proof (the creature’s jawbone) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Monster"
+      ],
+      "bounty": {
+        "target": "Veinwarped Mawclaw",
+        "status": "Alive only",
+        "crime": "arson of storehouses",
+        "last_seen": "among the reef-snarls",
+        "proof": "the creature’s jawbone"
+      }
+    },
+    {
+      "id": 156,
+      "title": "Oslan Holt",
+      "province": "The North Isle",
+      "settlement": "Icepoint",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Severe",
+      "reward_gp": 1250,
+      "npc": "Temple Bailiff Marla Wyst",
+      "description": "Wanted for poisoning wells. Last seen beneath the fallen beacon. Dead or Alive. Bring proof (a branded token) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Outlaw"
+      ],
+      "bounty": {
+        "target": "Oslan Holt",
+        "status": "Dead or Alive",
+        "crime": "poisoning wells",
+        "last_seen": "beneath the fallen beacon",
+        "proof": "a branded token"
+      }
+    },
+    {
+      "id": 157,
+      "title": "Perrin Vane",
+      "province": "The North Isle",
+      "settlement": "Bleakhold",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Dangerous",
+      "reward_gp": 1050,
+      "npc": "Temple Bailiff Alwen Greave",
+      "description": "Wanted for blackmail and bribery. Last seen along the coastal cliffs. Alive only. Bring proof (a signet ring) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Outlaw"
+      ],
+      "bounty": {
+        "target": "Perrin Vane",
+        "status": "Alive only",
+        "crime": "blackmail and bribery",
+        "last_seen": "along the coastal cliffs",
+        "proof": "a signet ring"
+      }
+    },
+    {
+      "id": 158,
+      "title": "Renn Stonewise",
+      "province": "The North Isle",
+      "settlement": "Bleakhold",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Dangerous",
+      "reward_gp": 950,
+      "npc": "Coin Inspector Nessa Oathstone",
+      "description": "Wanted for murder on the road. Last seen at the old stone bridge. Alive preferred. Bring proof (the creature’s jawbone) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Outlaw"
+      ],
+      "bounty": {
+        "target": "Renn Stonewise",
+        "status": "Alive preferred",
+        "crime": "murder on the road",
+        "last_seen": "at the old stone bridge",
+        "proof": "the creature’s jawbone"
+      }
+    },
+    {
+      "id": 159,
+      "title": "Merin Kern",
+      "province": "The North Isle",
+      "settlement": "Icepoint",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Dangerous",
+      "reward_gp": 1150,
+      "npc": "Road Marshal Brann Dorne",
+      "description": "Wanted for counterfeit seals. Last seen among the reef-snarls. Dead or Alive. Bring proof (the leader’s ledger) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Outlaw"
+      ],
+      "bounty": {
+        "target": "Merin Kern",
+        "status": "Dead or Alive",
+        "crime": "counterfeit seals",
+        "last_seen": "among the reef-snarls",
+        "proof": "the leader’s ledger"
+      }
+    },
+    {
+      "id": 160,
+      "title": "Maerys Wyst",
+      "province": "The North Isle",
+      "settlement": "Icepoint",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Moderate",
+      "reward_gp": 550,
+      "npc": "Clan Deputy Nyra Ryne",
+      "description": "Wanted for raiding coastal skiffs. Last seen in the night market alleys. Alive preferred. Bring proof (a marked dagger) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Outlaw"
+      ],
+      "bounty": {
+        "target": "Maerys Wyst",
+        "status": "Alive preferred",
+        "crime": "raiding coastal skiffs",
+        "last_seen": "in the night market alleys",
+        "proof": "a marked dagger"
+      }
+    },
+    {
+      "id": 161,
+      "title": "Brann Mire",
+      "province": "The East Isle",
+      "settlement": "Stillport",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Moderate",
+      "reward_gp": 500,
+      "npc": "Dockmaster Varos Wyst",
+      "description": "Wanted for kidnapping for coin. Last seen in the night market alleys. Alive preferred. Bring proof (the creature’s jawbone) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Outlaw"
+      ],
+      "bounty": {
+        "target": "Brann Mire",
+        "status": "Alive preferred",
+        "crime": "kidnapping for coin",
+        "last_seen": "in the night market alleys",
+        "proof": "the creature’s jawbone"
+      }
+    },
+    {
+      "id": 162,
+      "title": "Sera Kline",
+      "province": "The East Isle",
+      "settlement": "Port Braedin",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Moderate",
+      "reward_gp": 550,
+      "npc": "Coin Inspector Oren Vale",
+      "description": "Wanted for blackmail and bribery. Last seen along the coastal cliffs. Dead or Alive. Bring proof (a unique tattoo sketch) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Outlaw"
+      ],
+      "bounty": {
+        "target": "Sera Kline",
+        "status": "Dead or Alive",
+        "crime": "blackmail and bribery",
+        "last_seen": "along the coastal cliffs",
+        "proof": "a unique tattoo sketch"
+      }
+    },
+    {
+      "id": 163,
+      "title": "Sera Greave",
+      "province": "The East Isle",
+      "settlement": "Stillport",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Severe",
+      "reward_gp": 1550,
+      "npc": "Harbour-Captain Dain Ryner",
+      "description": "Wanted for poisoning wells. Last seen at the old stone bridge. Alive preferred. Bring proof (a signet ring) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Outlaw"
+      ],
+      "bounty": {
+        "target": "Sera Greave",
+        "status": "Alive preferred",
+        "crime": "poisoning wells",
+        "last_seen": "at the old stone bridge",
+        "proof": "a signet ring"
+      }
+    },
+    {
+      "id": 164,
+      "title": "Reef-Stalker",
+      "province": "The East Isle",
+      "settlement": "Port Braedin",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Moderate",
+      "reward_gp": 550,
+      "npc": "Harbour-Captain Renn Mire",
+      "description": "Wanted for blackmail and bribery. Last seen beneath the fallen beacon. Alive only. Bring proof (a marked dagger) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Monster"
+      ],
+      "bounty": {
+        "target": "Reef-Stalker",
+        "status": "Alive only",
+        "crime": "blackmail and bribery",
+        "last_seen": "beneath the fallen beacon",
+        "proof": "a marked dagger"
+      }
+    },
+    {
+      "id": 165,
+      "title": "Marla Brack",
+      "province": "The East Isle",
+      "settlement": "Stillport",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Severe",
+      "reward_gp": 1500,
+      "npc": "Temple Bailiff Sera Mire",
+      "description": "Wanted for armed extortion. Last seen by the northern watchpost. Dead or Alive. Bring proof (a marked dagger) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Outlaw"
+      ],
+      "bounty": {
+        "target": "Marla Brack",
+        "status": "Dead or Alive",
+        "crime": "armed extortion",
+        "last_seen": "by the northern watchpost",
+        "proof": "a marked dagger"
+      }
+    },
+    {
+      "id": 166,
+      "title": "Tilda Kline",
+      "province": "The East Isle",
+      "settlement": "Port Braedin",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Moderate",
+      "reward_gp": 500,
+      "npc": "Watch Sergeant Marla Flint",
+      "description": "Wanted for blackmail and bribery. Last seen on the ice-pass. Alive preferred. Bring proof (the creature’s jawbone) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Outlaw"
+      ],
+      "bounty": {
+        "target": "Tilda Kline",
+        "status": "Alive preferred",
+        "crime": "blackmail and bribery",
+        "last_seen": "on the ice-pass",
+        "proof": "the creature’s jawbone"
+      }
+    },
+    {
+      "id": 167,
+      "title": "Varos Flint",
+      "province": "The East Isle",
+      "settlement": "Port Braedin",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Severe",
+      "reward_gp": 1250,
+      "npc": "Dockmaster Maerys Vannis",
+      "description": "Wanted for blackmail and bribery. Last seen by the northern watchpost. Alive preferred. Bring proof (a branded token) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Outlaw"
+      ],
+      "bounty": {
+        "target": "Varos Flint",
+        "status": "Alive preferred",
+        "crime": "blackmail and bribery",
+        "last_seen": "by the northern watchpost",
+        "proof": "a branded token"
+      }
+    },
+    {
+      "id": 168,
+      "title": "Oslan Hale",
+      "province": "The East Isle",
+      "settlement": "Port Braedin",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Moderate",
+      "reward_gp": 550,
+      "npc": "Temple Bailiff Varos Oathstone",
+      "description": "Wanted for armed extortion. Last seen on the ice-pass. Alive only. Bring proof (the creature’s jawbone) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Outlaw"
+      ],
+      "bounty": {
+        "target": "Oslan Hale",
+        "status": "Alive only",
+        "crime": "armed extortion",
+        "last_seen": "on the ice-pass",
+        "proof": "the creature’s jawbone"
+      }
+    },
+    {
+      "id": 169,
+      "title": "Ironhorn Buckbear",
+      "province": "The East Isle",
+      "settlement": "Stillport",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Dangerous",
+      "reward_gp": 1150,
+      "npc": "Harbour-Captain Elric Sunfall",
+      "description": "Wanted for kidnapping for coin. Last seen beneath the fallen beacon. Alive preferred. Bring proof (the creature’s jawbone) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Monster"
+      ],
+      "bounty": {
+        "target": "Ironhorn Buckbear",
+        "status": "Alive preferred",
+        "crime": "kidnapping for coin",
+        "last_seen": "beneath the fallen beacon",
+        "proof": "the creature’s jawbone"
+      }
+    },
+    {
+      "id": 170,
+      "title": "Mara Sile",
+      "province": "The East Isle",
+      "settlement": "Port Braedin",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Dangerous",
+      "reward_gp": 1000,
+      "npc": "Warden-Lieutenant Tilda Stonewise",
+      "description": "Wanted for raiding coastal skiffs. Last seen on the ice-pass. Alive preferred. Bring proof (the creature’s jawbone) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Outlaw"
+      ],
+      "bounty": {
+        "target": "Mara Sile",
+        "status": "Alive preferred",
+        "crime": "raiding coastal skiffs",
+        "last_seen": "on the ice-pass",
+        "proof": "the creature’s jawbone"
+      }
+    },
+    {
+      "id": 171,
+      "title": "Nessa Kade",
+      "province": "The Bolt Isle",
+      "settlement": "Shatterstrand",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Dangerous",
+      "reward_gp": 1100,
+      "npc": "Clan Deputy Perrin Kern",
+      "description": "Wanted for armed extortion. Last seen in the night market alleys. Dead or Alive. Bring proof (the leader’s ledger) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Outlaw"
+      ],
+      "bounty": {
+        "target": "Nessa Kade",
+        "status": "Dead or Alive",
+        "crime": "armed extortion",
+        "last_seen": "in the night market alleys",
+        "proof": "the leader’s ledger"
+      }
+    },
+    {
+      "id": 172,
+      "title": "Ralk Sile",
+      "province": "The Bolt Isle",
+      "settlement": "Shatterstrand",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Dangerous",
+      "reward_gp": 1150,
+      "npc": "Harbour-Captain Perrin Greave",
+      "description": "Wanted for kidnapping for coin. Last seen at the old stone bridge. Alive only. Bring proof (a branded token) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Outlaw"
+      ],
+      "bounty": {
+        "target": "Ralk Sile",
+        "status": "Alive only",
+        "crime": "kidnapping for coin",
+        "last_seen": "at the old stone bridge",
+        "proof": "a branded token"
+      }
+    },
+    {
+      "id": 173,
+      "title": "Isembard Oathstone",
+      "province": "The Bolt Isle",
+      "settlement": "Blackwake Cove",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Moderate",
+      "reward_gp": 550,
+      "npc": "Road Marshal Caldus Mire",
+      "description": "Wanted for poisoning wells. Last seen on the ice-pass. Alive preferred. Bring proof (a signet ring) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Outlaw"
+      ],
+      "bounty": {
+        "target": "Isembard Oathstone",
+        "status": "Alive preferred",
+        "crime": "poisoning wells",
+        "last_seen": "on the ice-pass",
+        "proof": "a signet ring"
+      }
+    },
+    {
+      "id": 174,
+      "title": "Varos Oathstone",
+      "province": "The Bolt Isle",
+      "settlement": "Hookscar Bay",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Severe",
+      "reward_gp": 1550,
+      "npc": "Harbour-Captain Mara Vannis",
+      "description": "Wanted for blackmail and bribery. Last seen by the northern watchpost. Dead or Alive. Bring proof (the wanted poster stamp) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Outlaw"
+      ],
+      "bounty": {
+        "target": "Varos Oathstone",
+        "status": "Dead or Alive",
+        "crime": "blackmail and bribery",
+        "last_seen": "by the northern watchpost",
+        "proof": "the wanted poster stamp"
+      }
+    },
+    {
+      "id": 175,
+      "title": "Renn Kade",
+      "province": "The Bolt Isle",
+      "settlement": "Shatterstrand",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Moderate",
+      "reward_gp": 800,
+      "npc": "Harbour-Captain Varek Molt",
+      "description": "Wanted for arson of storehouses. Last seen on the ice-pass. Alive only. Bring proof (the creature’s jawbone) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Outlaw"
+      ],
+      "bounty": {
+        "target": "Renn Kade",
+        "status": "Alive only",
+        "crime": "arson of storehouses",
+        "last_seen": "on the ice-pass",
+        "proof": "the creature’s jawbone"
+      }
+    },
+    {
+      "id": 176,
+      "title": "Ysolde Stonewise",
+      "province": "The Bolt Isle",
+      "settlement": "Shatterstrand",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Moderate",
+      "reward_gp": 700,
+      "npc": "Reeve Rell Roan",
+      "description": "Wanted for blackmail and bribery. Last seen among the reef-snarls. Alive preferred. Bring proof (the wanted poster stamp) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Outlaw"
+      ],
+      "bounty": {
+        "target": "Ysolde Stonewise",
+        "status": "Alive preferred",
+        "crime": "blackmail and bribery",
+        "last_seen": "among the reef-snarls",
+        "proof": "the wanted poster stamp"
+      }
+    },
+    {
+      "id": 177,
+      "title": "Frostwarg Alpha",
+      "province": "The Bolt Isle",
+      "settlement": "Hookscar Bay",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Moderate",
+      "reward_gp": 800,
+      "npc": "Road Marshal Oslan Vale",
+      "description": "Wanted for smuggling rite-goods. Last seen along the coastal cliffs. Alive preferred. Bring proof (a unique tattoo sketch) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Monster"
+      ],
+      "bounty": {
+        "target": "Frostwarg Alpha",
+        "status": "Alive preferred",
+        "crime": "smuggling rite-goods",
+        "last_seen": "along the coastal cliffs",
+        "proof": "a unique tattoo sketch"
+      }
+    },
+    {
+      "id": 178,
+      "title": "Veyra Holt",
+      "province": "The Bolt Isle",
+      "settlement": "Hookscar Bay",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Dangerous",
+      "reward_gp": 1200,
+      "npc": "Watch Sergeant Varek Holt",
+      "description": "Wanted for grave-robbery. Last seen by the northern watchpost. Alive preferred. Bring proof (a branded token) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Outlaw"
+      ],
+      "bounty": {
+        "target": "Veyra Holt",
+        "status": "Alive preferred",
+        "crime": "grave-robbery",
+        "last_seen": "by the northern watchpost",
+        "proof": "a branded token"
+      }
+    },
+    {
+      "id": 179,
+      "title": "Ysolde Flint",
+      "province": "The Bolt Isle",
+      "settlement": "Hookscar Bay",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Severe",
+      "reward_gp": 1500,
+      "npc": "Watch Sergeant Lysa Stonewise",
+      "description": "Wanted for murder on the road. Last seen in the night market alleys. Alive preferred. Bring proof (the leader’s ledger) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Outlaw"
+      ],
+      "bounty": {
+        "target": "Ysolde Flint",
+        "status": "Alive preferred",
+        "crime": "murder on the road",
+        "last_seen": "in the night market alleys",
+        "proof": "the leader’s ledger"
+      }
+    },
+    {
+      "id": 180,
+      "title": "Varek Vale",
+      "province": "The Bolt Isle",
+      "settlement": "Hookscar Bay",
+      "quest_type": "Bounty",
+      "faction": "Civilian",
+      "honour_required": null,
+      "level_min": 7,
+      "level_max": 10,
+      "difficulty": "Dangerous",
+      "reward_gp": 1100,
+      "npc": "Reeve Dain Stonewise",
+      "description": "Wanted for smuggling rite-goods. Last seen within the reed-choked shallows. Alive only. Bring proof (a branded token) to claim the reward.",
+      "secondary_rewards": [],
+      "tags": [
+        "Bounty",
+        "Wanted",
+        "Manhunt",
+        "Outlaw"
+      ],
+      "bounty": {
+        "target": "Varek Vale",
+        "status": "Alive only",
+        "crime": "smuggling rite-goods",
+        "last_seen": "within the reed-choked shallows",
+        "proof": "a branded token"
+      }
     }
   ]
 }
