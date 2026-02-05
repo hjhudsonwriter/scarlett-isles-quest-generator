@@ -373,7 +373,9 @@ function eligiblePool(){
     const inProvince = (province === "ALL") || (q.province === province);
     const inFaction = (faction === "ALL") || (q.faction === faction);
     const inType = (qtype === "ALL") || (q.quest_type === qtype);
-    const inLevel = (level >= q.level_min && level <= q.level_max);
+    const inLevel = (q.quest_type === "Bounty")
+  ? (level >= 7 && level <= 10)          // show bounties on party level 7–10 regardless
+  : (level >= q.level_min && level <= q.level_max);
     const okHonour = honourPass(q, clanHonour, templeHonour);
     return inProvince && inFaction && inType && inLevel && okHonour;
   });
@@ -427,13 +429,35 @@ function renderParchments(list){
     const nail2 = document.createElement("div");
     nail2.className = "nail r";
 
-    const title = document.createElement("div");
-    title.className = "title";
-    title.textContent = q.title;
+    const isBounty = (q.quest_type === "Bounty");
 
-    const notice = document.createElement("p");
-    notice.className = "notice";
-    notice.textContent = q.notice || q.description || q.summary || "";
+// Title area (special formatting for bounties)
+let headerEl, targetEl, rewardEl;
+
+if(isBounty){
+  headerEl = document.createElement("div");
+  headerEl.className = "bountyHead";
+  headerEl.textContent = "BOUNTY";
+
+  targetEl = document.createElement("div");
+  targetEl.className = "bountyTarget";
+  targetEl.textContent = q.title; // target name/monster
+
+  rewardEl = document.createElement("div");
+  rewardEl.className = "bountyReward";
+  rewardEl.textContent = `${q.reward_gp} gp`;
+
+} else {
+  headerEl = document.createElement("div");
+  headerEl.className = "title";
+  headerEl.textContent = q.title;
+
+  targetEl = document.createElement("p");
+  targetEl.className = "notice";
+  targetEl.textContent = q.notice || q.description || q.summary || "";
+
+  rewardEl = null;
+}
 
     const meta = document.createElement("div");
     meta.className = "meta";
@@ -489,8 +513,9 @@ function renderParchments(list){
 
     card.appendChild(nail1);
     card.appendChild(nail2);
-    card.appendChild(title);
-    card.appendChild(notice);
+    card.appendChild(headerEl);
+card.appendChild(targetEl);
+if(rewardEl) card.appendChild(rewardEl);
     card.appendChild(meta);
     card.appendChild(actions);
     card.appendChild(sig);
@@ -573,12 +598,29 @@ function bind(){
   });
 
   $("btnGenerate").addEventListener("click", () => {
-    const pool = eligiblePool();
-    const n = clampInt($("count").value, 1, 6);
-    currentShown = sample(pool, n);
-renderParchments(currentShown);
-  });
+  const pool = eligiblePool();
+  const n = clampInt($("count").value, 1, 6);
 
+  const bounties = pool.filter(q => q.quest_type === "Bounty");
+  const normal  = pool.filter(q => q.quest_type !== "Bounty");
+
+  const picked = [];
+
+  // allow at most ONE bounty per click
+  if (bounties.length){
+    picked.push(bounties[Math.floor(Math.random() * bounties.length)]);
+  }
+
+  // fill remaining slots with normal quests
+  const remaining = n - picked.length;
+  if (remaining > 0 && normal.length){
+    picked.push(...sample(normal, remaining));
+  }
+
+  currentShown = picked;
+  renderParchments(currentShown);
+});
+   
   $("btnClear").addEventListener("click", () => {
   currentShown = [];
   $("parchments").innerHTML = "";
