@@ -34,28 +34,60 @@ function initFirebase() {
   }
 }
 
+// Track which quest is the "primary" quest for shop integration
+let primaryQuestId = null;
+
+function loadPrimaryQuest() {
+  try {
+    return parseInt(localStorage.getItem('si_primary_quest_id'), 10) || null;
+  } catch { return null; }
+}
+
+function savePrimaryQuest() {
+  if (primaryQuestId) {
+    localStorage.setItem('si_primary_quest_id', String(primaryQuestId));
+  } else {
+    localStorage.removeItem('si_primary_quest_id');
+  }
+}
+
+function setPrimaryQuest(questId) {
+  primaryQuestId = questId;
+  savePrimaryQuest();
+  renderAccepted();
+  syncAcceptedToFirebase();
+}
+
 // Sync accepted quests to Firebase for the shop to read
 async function syncAcceptedToFirebase() {
   if (!firebaseEnabled || !db) return;
   
   try {
-    // Create a simplified version of accepted quests for the shop
-    const activeQuests = accepted.map(q => ({
-      id: q.id,
-      title: q.title,
-      quest_type: q.quest_type,
-      tags: q.tags || [],
-      province: q.province,
-      settlement: q.settlement,
-      difficulty: q.difficulty,
-      acceptedAt: Date.now()
-    }));
+    // Find the primary quest (or first accepted if none set)
+    let primary = null;
+    if (primaryQuestId) {
+      primary = accepted.find(q => q.id === primaryQuestId);
+    }
+    if (!primary && accepted.length > 0) {
+      primary = accepted[0];
+    }
+    
+    // Create the primary quest data for the shop
+    const primaryQuestData = primary ? {
+      id: primary.id,
+      title: primary.title,
+      quest_type: primary.quest_type,
+      tags: primary.tags || [],
+      province: primary.province,
+      settlement: primary.settlement,
+      difficulty: primary.difficulty
+    } : null;
     
     await db.ref('activeQuests').set({
-      quests: activeQuests,
+      primaryQuest: primaryQuestData,
       updatedAt: Date.now()
     });
-    console.log('Synced accepted quests to Firebase:', activeQuests.length);
+    console.log('Synced primary quest to Firebase:', primaryQuestData?.title || 'none');
   } catch (error) {
     console.warn('Failed to sync quests to Firebase:', error);
   }
@@ -361,15 +393,20 @@ function renderAccepted(){
   box.innerHTML = provs.map(p => {
     const items = byProv[p]
       .sort((a,b)=>String(a.title).localeCompare(String(b.title)))
-      .map(q => `
-        <div class="accItem ${selectedAcceptedId===q.id ? "selected" : ""}" data-acc="${q.id}">
-          <div class="accTitle">${escapeHtml(q.title)}</div>
+      .map(q => {
+        const isPrimary = primaryQuestId === q.id;
+        return `
+        <div class="accItem ${selectedAcceptedId===q.id ? "selected" : ""} ${isPrimary ? "primary" : ""}" data-acc="${q.id}">
+          <div class="accTitle">
+            <span class="primaryStar ${isPrimary ? "active" : ""}" data-primary="${q.id}" title="${isPrimary ? "Primary quest for shop" : "Set as primary quest"}">★</span>
+            ${escapeHtml(q.title)}
+          </div>
           <div class="accMeta">
             ${escapeHtml(q.settlement)} • ${escapeHtml(q.faction)} • Lv ${q.level_min}-${q.level_max}
             <span style="float:right; cursor:pointer;" title="Remove" data-rm="${q.id}">✕</span>
           </div>
         </div>
-      `).join("");
+      `}).join("");
 
     return `<div class="accGroup">
       <div class="accProv">${escapeHtml(p)}</div>
@@ -385,12 +422,32 @@ function renderAccepted(){
     });
   });
 
+  // bind primary star buttons
+  box.querySelectorAll("[data-primary]").forEach(el => {
+    el.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const qid = parseInt(el.getAttribute("data-primary"), 10);
+      // Toggle: if already primary, clear it; otherwise set it
+      if (primaryQuestId === qid) {
+        setPrimaryQuest(null);
+      } else {
+        setPrimaryQuest(qid);
+      }
+    });
+  });
+
   // bind remove buttons (stop click bubbling)
   box.querySelectorAll("[data-rm]").forEach(el => {
     el.addEventListener("click", (e) => {
       e.stopPropagation();
       const rid = parseInt(el.getAttribute("data-rm"), 10);
       removeAccepted(rid);
+      // Clear primary if we removed it
+      if (primaryQuestId === rid) {
+        primaryQuestId = null;
+        savePrimaryQuest();
+        syncAcceptedToFirebase();
+      }
       if(selectedAcceptedId === rid){
         selectedAcceptedId = null;
         renderQuestOutline(null);
@@ -765,6 +822,9 @@ function moveTopPanels(){
 (async function init(){
   // Initialize Firebase for shop sync
   initFirebase();
+  
+  // Load saved primary quest
+  primaryQuestId = loadPrimaryQuest();
   
   populateHonour();
   bind();

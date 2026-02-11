@@ -572,3 +572,31 @@ button:active, .btn:active{
   transform: translateY(1px);
   filter: brightness(.98);
 }
+
+/* Primary Quest Star */
+.primaryStar {
+  cursor: pointer;
+  color: #555;
+  margin-right: 0.4rem;
+  font-size: 0.9rem;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.primaryStar:hover {
+  color: #d4a857;
+  transform: scale(1.2);
+}
+
+.primaryStar.active {
+  color: #f0c040;
+  text-shadow: 0 0 6px rgba(240, 192, 64, 0.5);
+}
+
+.accItem.primary {
+  border-left: 3px solid #d4a857;
+  background: linear-gradient(90deg, rgba(212, 168, 87, 0.1) 0%, transparent 50%);
+}
+
+.accItem.primary .accTitle {
+  color: #f0c040;
+}
