@@ -2,6 +2,65 @@
    Data model: data/quests.json
 */
 
+// ===================================
+// FIREBASE CONFIG (same as shop)
+// ===================================
+const firebaseConfig = {
+  apiKey: "AIzaSyCAtLDqghTbYhyhwcoTsefTiMecC30RMuQ",
+  authDomain: "scarlett-isles-companion.firebaseapp.com",
+  databaseURL: "https://scarlett-isles-companion-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "scarlett-isles-companion",
+  storageBucket: "scarlett-isles-companion.firebasestorage.app",
+  messagingSenderId: "1004879472877",
+  appId: "1:1004879472877:web:a498908c2ccf362e8e7e63"
+};
+
+let firebaseApp = null;
+let db = null;
+let firebaseEnabled = false;
+
+function initFirebase() {
+  try {
+    if (typeof firebase !== 'undefined') {
+      firebaseApp = firebase.initializeApp(firebaseConfig);
+      db = firebase.database();
+      firebaseEnabled = true;
+      console.log('Firebase initialized successfully');
+    } else {
+      console.warn('Firebase SDK not loaded');
+    }
+  } catch (error) {
+    console.warn('Firebase initialization failed:', error);
+  }
+}
+
+// Sync accepted quests to Firebase for the shop to read
+async function syncAcceptedToFirebase() {
+  if (!firebaseEnabled || !db) return;
+  
+  try {
+    // Create a simplified version of accepted quests for the shop
+    const activeQuests = accepted.map(q => ({
+      id: q.id,
+      title: q.title,
+      quest_type: q.quest_type,
+      tags: q.tags || [],
+      province: q.province,
+      settlement: q.settlement,
+      difficulty: q.difficulty,
+      acceptedAt: Date.now()
+    }));
+    
+    await db.ref('activeQuests').set({
+      quests: activeQuests,
+      updatedAt: Date.now()
+    });
+    console.log('Synced accepted quests to Firebase:', activeQuests.length);
+  } catch (error) {
+    console.warn('Failed to sync quests to Firebase:', error);
+  }
+}
+
 const $ = (id) => document.getElementById(id);
 
 const state = {
@@ -15,7 +74,7 @@ const ACCEPTED_KEY = "si_noticeboard_accepted_v1";
 const OUTLINE_KEY  = "si_noticeboard_outlines_v1";
 
 let accepted = loadAccepted();
-let currentShown = []; // tracks what’s currently pinned
+let currentShown = []; // tracks what's currently pinned
 
 let selectedAcceptedId = null;
 let outlineCache = loadOutlineCache();
@@ -86,16 +145,16 @@ function buildOutlineFromQuest(q){
     Diplomacy: ["Hotheaded Duelists", "Toll-Gang Lieutenants", "Rival Delegates (armed)", "Mob of Agitators"],
     Exploration: ["Boundary Wardens", "Reef Predators", "Cave Stalkers", "Lost Patrol (hostile from fear)"],
     Military: ["Bandit Toll-Fort", "Zealot Vanguard", "Warband Scouts", "Corrupted Brutes"],
-    Bounty: ["Wanted Lieutenant", "Smuggler Captain", "Deserter Sergeant", "Fence’s Bodyguards"],
+    Bounty: ["Wanted Lieutenant", "Smuggler Captain", "Deserter Sergeant", "Fence's Bodyguards"],
     Trade: ["Tariff Forgers", "Registry Saboteurs", "Warehouse Breakers", "Rival Brokers"]
   };
 
   const encounterType = pick(`encType:${q.id}`, ["Combat", "Chase", "Standoff", "Ambush"]);
   const enemy = pick(`enemy:${q.id}`, enemyBanks[q.quest_type] || ["Unknown Threat"]);
   const twist = pick(`twist:${q.id}`, [
-    "The ‘villain’ is being coerced by someone higher up.",
+    "The ‘villain' is being coerced by someone higher up.",
     "The obvious suspect is a planted distraction.",
-    "The target isn’t malicious, just terrified and cornered.",
+    "The target isn't malicious, just terrified and cornered.",
     "A faction witness arrives mid-scene and complicates everything."
   ]);
 
@@ -103,7 +162,7 @@ function buildOutlineFromQuest(q){
     Investigation: [
       {skill:"Investigation", dc:13, win:"Find the key clue that points to the real location."},
       {skill:"Perception", dc:12, win:"Spot the detail everyone else missed."},
-      {skill:"Insight", dc:12, win:"Clock who’s lying or withholding."}
+      {skill:"Insight", dc:12, win:"Clock who's lying or withholding."}
     ],
     Intrigue: [
       {skill:"Insight", dc:13, win:"Read the room and identify leverage."},
@@ -116,9 +175,9 @@ function buildOutlineFromQuest(q){
       {skill:"Animal Handling or Intimidation", dc:13, win:"Break enemy morale or calm mounts."}
     ],
     Retrieval: [
-      {skill:"Investigation", dc:13, win:"Locate the item’s last known trail."},
-      {skill:"Thieves’ Tools or Sleight of Hand", dc:14, win:"Bypass a lock, seal, or ward."},
-      {skill:"Arcana or Religion", dc:13, win:"Identify the magical ‘catch’ on the item."}
+      {skill:"Investigation", dc:13, win:"Locate the item's last known trail."},
+      {skill:"Thieves' Tools or Sleight of Hand", dc:14, win:"Bypass a lock, seal, or ward."},
+      {skill:"Arcana or Religion", dc:13, win:"Identify the magical ‘catch' on the item."}
     ],
     Diplomacy: [
       {skill:"Persuasion", dc:14, win:"Get both sides to agree to terms."},
@@ -127,8 +186,8 @@ function buildOutlineFromQuest(q){
     ],
     Exploration: [
       {skill:"Survival", dc:13, win:"Navigate hazards without losing time."},
-      {skill:"Nature", dc:13, win:"Understand what the environment is ‘doing’."},
-      {skill:"Perception", dc:12, win:"Notice the danger before it’s on you."}
+      {skill:"Nature", dc:13, win:"Understand what the environment is ‘doing'."},
+      {skill:"Perception", dc:12, win:"Notice the danger before it's on you."}
     ],
     Military: [
       {skill:"Stealth", dc:13, win:"Approach unseen and choose your angle."},
@@ -136,7 +195,7 @@ function buildOutlineFromQuest(q){
       {skill:"Intimidation", dc:14, win:"Make the leader surrender instead of die."}
     ],
     Bounty: [
-      {skill:"Investigation", dc:13, win:"Confirm the target’s hideout."},
+      {skill:"Investigation", dc:13, win:"Confirm the target's hideout."},
       {skill:"Perception", dc:12, win:"Spot escape routes and traps."},
       {skill:"Athletics or Acrobatics", dc:13, win:"Catch them when they bolt."}
     ],
@@ -163,7 +222,7 @@ function buildOutlineFromQuest(q){
   ];
 
   const complication = pick(`comp:${q.id}`, [
-    "A witness demands protection and won’t talk otherwise.",
+    "A witness demands protection and won't talk otherwise.",
     "A faction messenger arrives with an ultimatum.",
     "The environment turns hostile (fog, roots, tide, tremor).",
     "The party is offered a bribe to walk away."
@@ -264,8 +323,10 @@ function acceptQuest(q){
   if(!accepted.some(x => x.id === q.id)){
     accepted.push(q);
     saveAccepted();
-    // build outline immediately so it’s ready on click
+    // build outline immediately so it's ready on click
     getOrBuildOutline(q);
+    // Sync to Firebase for shop integration
+    syncAcceptedToFirebase();
   }
 
   renderAccepted();
@@ -275,6 +336,8 @@ function acceptQuest(q){
 function removeAccepted(id){
   accepted = accepted.filter(q => q.id !== id);
   saveAccepted();
+  // Sync to Firebase for shop integration
+  syncAcceptedToFirebase();
   renderAccepted();
 }
 
@@ -700,11 +763,18 @@ function moveTopPanels(){
 }
 
 (async function init(){
+  // Initialize Firebase for shop sync
+  initFirebase();
+  
   populateHonour();
   bind();
   requestAnimationFrame(moveTopPanels);
   try{
     await loadData();
+    // Sync any existing accepted quests to Firebase
+    if (accepted.length > 0) {
+      syncAcceptedToFirebase();
+    }
   }catch(e){
     console.error(e);
     $("emptyState").style.display = "block";
